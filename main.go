@@ -1,6 +1,7 @@
 package main
 
 import (
+	"example.com/m/v2/tools/convert"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
@@ -11,14 +12,7 @@ import (
 
 func main() {
 	r := gin.Default()
-	r.GET("/protobuf", func(c *gin.Context) {
-
-		data := &module.User{
-			Name: "张三",
-			Age:  20,
-		}
-		c.ProtoBuf(http.StatusOK, data)
-	})
+	r.GET("/protobuf", GETHandler)
 	r.Run(":8080")
 
 	//resp, err := http.Get("http://localhost:8080/protobuf")
@@ -36,11 +30,21 @@ func main() {
 	//		}
 	//	}
 
-	var user []*User
-	if errs := db.Table("user_tab").Where("id = ?", 1).Find(&user).GetErrors(); len(errs) > 0 {
-		fmt.Println(errs)
+	//var user []*User
+	//if errs := db.Table("user_tab").Where("id = ?", 1).Find(&user).GetErrors(); len(errs) > 0 {
+	//	fmt.Println(errs)
+	//}
+	//fmt.Println(user)
+}
+
+func GETHandler(c *gin.Context) {
+	nums := c.Query("nums") //string
+	sum := int64(0)
+	for _, num := range nums {
+		sum += int64(num)
 	}
-	fmt.Println(user)
+	detail := c.DefaultQuery("name", "lee") + ":" + c.DefaultQuery("age", "100") + ":" + fmt.Sprintf("%v", sum)
+	c.JSON(http.StatusOK, &module.UserResponse{Detail: convert.String(detail)})
 }
 
 //gorm:

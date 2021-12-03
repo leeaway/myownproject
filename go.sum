@@ -40,6 +40,8 @@ github.com/json-iterator/go v1.1.9 h1:9yzud/Ht36ygwatGx56VwCZtlI/2AD15T1X2sjSuGn
 github.com/json-iterator/go v1.1.9/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
 github.com/leeaway/MyProtobuf v0.0.0-20211203032722-a2396dab5c33 h1:qQt89xwN3whamfdOpHwUhAaAAu1d4pVnszzyNnubf6I=
 github.com/leeaway/MyProtobuf v0.0.0-20211203032722-a2396dab5c33/go.mod h1:zaHMlJUdbIW+8DleZL79OzaKQrSRLeplS/dGkWhIiSg=
+github.com/leeaway/MyProtobuf v0.0.0-20211203080216-06b29954bbc9 h1:7QyRl/kOosT8lefROpCRIUG3WWaHgrz8bpMvz898Ol4=
+github.com/leeaway/MyProtobuf v0.0.0-20211203080216-06b29954bbc9/go.mod h1:zaHMlJUdbIW+8DleZL79OzaKQrSRLeplS/dGkWhIiSg=
 github.com/leodido/go-urn v1.2.0 h1:hpXL4XnriNwQ/ABnpepYM/1vCLWNDfUNts8dX3xTG6Y=
 github.com/leodido/go-urn v1.2.0/go.mod h1:+8+nEpDfqqsY+g338gtMEUOtuK+4dEMhiQEgxpxOKII=
 github.com/lib/pq v1.1.1 h1:sJZmqHoEaY7f+NPP8pgLB/WxulyR3fewgCM2qaSlBb4=
