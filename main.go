@@ -2,18 +2,39 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	module "github.com/leeaway/MyProtobuf"
+	"net/http"
 )
 
 func main() {
-	//r := gin.Default()
-	//r.GET("/ping", func(c *gin.Context) {
-	//	c.JSON(200, gin.H{
-	//		"message": "pong",
-	//	})
-	//})
-	//r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	r := gin.Default()
+	r.GET("/protobuf", func(c *gin.Context) {
+
+		data := &module.User{
+			Name: "张三",
+			Age:  20,
+		}
+		c.ProtoBuf(http.StatusOK, data)
+	})
+	r.Run(":8080")
+
+	//resp, err := http.Get("http://localhost:8080/protobuf")
+	//	if err != nil {
+	//		fmt.Println(err)
+	//	} else {
+	//		defer resp.Body.Close()
+	//		body, err := ioutil.ReadAll(resp.Body)
+	//		if err != nil {
+	//			fmt.Println(err)
+	//		} else {
+	//			user := &module.User{}
+	//			proto.UnmarshalMerge(body, user)
+	//			fmt.Println(*user)
+	//		}
+	//	}
 
 	var user []*User
 	if errs := db.Table("user_tab").Where("id = ?", 1).Find(&user).GetErrors(); len(errs) > 0 {
