@@ -2,23 +2,18 @@ package main
 
 import (
 	"example.com/m/v2/demo"
+	"example.com/m/v2/tools/collections"
 	"fmt"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"io/ioutil"
-	"net/http"
 	"reflect"
 )
 
 func main() {
-	resp, err := http.Get("http://localhost:6100/api/v2/operation/openapi/adminportal/newwhsinitialization/get_rule_list?whs_id=EDG")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer resp.Body.Close()
-	body, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
-
+	newTrieTree := collections.CreateTrieTree([]string{"how", "hi", "hello", "so", "see", "he", "her"})
+	fmt.Println(newTrieTree.FindWord("kitty"))
+	newTrieTree.AddWord("kitty")
+	fmt.Println(newTrieTree.FindWord("kitty"))
+	fmt.Println(newTrieTree.FuzzyFindWord("kitty"))
 	//AOP
 	//h := &HelloAop{}
 	//h.TestAop()
