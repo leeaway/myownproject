@@ -9,14 +9,17 @@ import (
 )
 
 func main() {
-	newTrieTree := collections.CreateTrieTree([]string{"how", "hi", "hello", "so", "see", "he", "her"})
-	fmt.Println(newTrieTree.FindWord("kitty"))
-	newTrieTree.AddWord("kitty")
-	fmt.Println(newTrieTree.FindWord("kitty"))
-	fmt.Println(newTrieTree.FuzzyFindWord("kitty"))
+	//newTrieTree := collections.CreateTrieTree([]string{"how", "hi", "hello", "so", "see", "he", "her"})
+	//fmt.Println(newTrieTree.FindWord("her"))
+	//fmt.Println(newTrieTree.FindWord("kitty"))
+	//newTrieTree.AddWord("kitty")
+	//fmt.Println(newTrieTree.FindWord("kitty"))
+	//fmt.Println(newTrieTree.FuzzyFindWord("kitty"))
 	//AOP
 	//h := &HelloAop{}
 	//h.TestAop()
+	fmt.Println(collections.NewKMP("ABABC").Search("ABABBABACDABABACCDFA"))
+	leetcode
 }
 
 func init() {

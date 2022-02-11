@@ -19,6 +19,19 @@ func (n *TrieTreeNode) IsLeaf() bool {
 	return true
 }
 
+func (n *TrieTreeNode) GetChildrenNum() int {
+	if n == nil {
+		return 0
+	}
+	res := 0
+	for _, node := range n.Children {
+		if node != nil {
+			res++
+		}
+	}
+	return res
+}
+
 func newTrieTreeNode(content int) *TrieTreeNode {
 	return &TrieTreeNode{Content: content}
 }
@@ -57,13 +70,16 @@ func (t *TrieTree) AddWord(word string) {
 //精确查找
 func (t *TrieTree) FindWord(word string) bool {
 	temp := t.Root
-	for _, w := range word {
+	for i, w := range word {
 		if temp.Children[int(w)-aInt] == nil {
 			return false
 		}
 		temp = temp.Children[int(w)-aInt]
+		if i == len(word)-1 {
+			return true
+		}
 	}
-	return temp.IsLeaf()
+	return false
 }
 
 //前缀查找
