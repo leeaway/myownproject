@@ -2,6 +2,7 @@ package main
 
 import (
 	"example.com/m/v2/demo"
+	"example.com/m/v2/exercise"
 	"example.com/m/v2/leetcode"
 	"example.com/m/v2/tools/collections"
 	"fmt"
@@ -21,6 +22,8 @@ func main() {
 	//h.TestAop()
 	fmt.Println(collections.NewKMP("ABABC").Search("ABABBABACDABABACCDFA"))
 	fmt.Println(leetcode.CompareVersion("1.2", "1.10"))
+	exercise.ConcurrentCountWithoutMutex()
+	exercise.ConcurrentCountWithMutex()
 }
 
 func init() {
