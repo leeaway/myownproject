@@ -37,3 +37,26 @@ func (m *MyMutex) TryLock() bool {
 	new := old | mutexLocked //将锁标识位更改
 	return atomic.CompareAndSwapInt32((*int32)(unsafe.Pointer(&m.Mutex)), old, new)
 }
+
+//持有锁和等待锁的总数
+func (m *MyMutex) Count() int {
+	v := atomic.LoadInt32((*int32)(unsafe.Pointer(&m.Mutex)))
+	// 右移mutexWaiterShift位就是waiter的数量
+	v = v>>mutexWaiterShift + (v & mutexLocked)
+	return int(v)
+}
+
+func (m *MyMutex) IsLocked() bool {
+	v := atomic.LoadInt32((*int32)(unsafe.Pointer(&m.Mutex)))
+	return int(v)&mutexLocked > 0
+}
+
+func (m *MyMutex) IsWoken() bool {
+	v := atomic.LoadInt32((*int32)(unsafe.Pointer(&m.Mutex)))
+	return int(v)&mutexWoken > 0
+}
+
+func (m *MyMutex) IsStarving() bool {
+	v := atomic.LoadInt32((*int32)(unsafe.Pointer(&m.Mutex)))
+	return int(v)&mutexStarving > 0
+}
