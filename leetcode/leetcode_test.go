@@ -12,3 +12,10 @@ func TestLeetcode688(t *testing.T) {
 		So(KnightProbability2(3, 2, 1, 1), ShouldEqual, float64(0))
 	})
 }
+
+func TestLeetcode838(t *testing.T) {
+	Convey("TestLeeCode838", t, func() {
+		So(PushDominoes("RR.L"), ShouldEqual, "RR.L")
+		So(PushDominoes(".L.R...LR..L.."), ShouldEqual, "LL.RR.LLRRLL..")
+	})
+}
