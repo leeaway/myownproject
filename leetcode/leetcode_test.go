@@ -19,3 +19,7 @@ func TestLeetcode838(t *testing.T) {
 		So(PushDominoes(".L.R...LR..L.."), ShouldEqual, "LL.RR.LLRRLL..")
 	})
 }
+
+func TestLeetcode131(t *testing.T) {
+	Partition("aab")
+}

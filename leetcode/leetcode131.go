@@ -3,20 +3,28 @@ package leetcode
 import "fmt"
 
 func Partition(s string) [][]string {
-	fmt.Println(dfs(s))
+	fmt.Println(handle(s))
 	return nil
 }
 
-func dfs(str string) int {
+func handle(str string) [][]string {
+	var res [][]string
 	if len(str) <= 1 {
-		return 1
+		res = append(res, []string{str})
+		return res
 	}
-	res := 0
 	if IsHuiWen(str) {
-		res++
+		res = append(res, []string{str})
 	}
-	for i := 1; i <= len(str); i++ {
-		res += dfs(str[:i]) * dfs(str[i:])
+	for i := 1; i < len(str); i++ {
+		if !IsHuiWen(str[:i]) {
+			continue
+		}
+		nextRes := handle(str[i:])
+		for j, _ := range nextRes {
+			nextRes[j] = append(nextRes[j], str[:i])
+		}
+		res = append(res, nextRes...)
 	}
 	return res
 }
