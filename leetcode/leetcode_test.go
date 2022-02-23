@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"fmt"
 	. "github.com/smartystreets/goconvey/convey"
 	"testing"
 )
@@ -22,4 +23,14 @@ func TestLeetcode838(t *testing.T) {
 
 func TestLeetcode131(t *testing.T) {
 	Partition("aab")
+	fmt.Println(NumberOfGoodSubsets([]int{4, 2, 3, 15}))
+}
+
+func TestLeecode917(t *testing.T) {
+	Convey("TestLeetcode917", t, func() {
+		So(reverseOnlyLetters("Test1ng-Leet=code-Q!"), ShouldEqual, "Qedo1ct-eeLg=ntse-T!")
+		So(reverseOnlyLetters("abcde"), ShouldEqual, "edcba")
+		So(reverseOnlyLetters(""), ShouldEqual, "")
+		So(reverseOnlyLetters("123"), ShouldEqual, "123")
+	})
 }
