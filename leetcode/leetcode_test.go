@@ -34,3 +34,12 @@ func TestLeecode917(t *testing.T) {
 		So(reverseOnlyLetters("123"), ShouldEqual, "123")
 	})
 }
+
+func TestLeetcpde1706(t *testing.T) {
+	testCase1 := [][]int{{1, 1, 1, 1, 1, 1}, {-1, -1, -1, -1, -1, -1}, {1, 1, 1, 1, 1, 1}, {-1, -1, -1, -1, -1, -1}}
+	testCase2 := [][]int{{1, 1, 1, -1, -1}, {1, 1, 1, -1, -1}, {-1, -1, -1, 1, 1}, {1, 1, 1, 1, -1}, {-1, -1, -1, -1, -1}}
+	Convey("TestLeetcode1706", t, func() {
+		So(findBall(testCase1), ShouldResemble, []int{0, 1, 2, 3, 4, -1})
+		So(findBall(testCase2), ShouldResemble, []int{1, -1, -1, -1, -1})
+	})
+}
