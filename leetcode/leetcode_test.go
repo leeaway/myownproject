@@ -43,3 +43,16 @@ func TestLeetcpde1706(t *testing.T) {
 		So(findBall(testCase2), ShouldResemble, []int{1, -1, -1, -1, -1})
 	})
 }
+
+func TestLeetcode139(t *testing.T) {
+	fmt.Println(wordBreak("leetcode", []string{"leet", "code"}))
+}
+
+func TestLeetcode537(t *testing.T) {
+	//Convey("TestLeetcode537",t, func() {
+	//	So(complexNumberMultiply("1+1i","1+1i"),ShouldEqual,"0+2i")
+	//	So(complexNumberMultiply("1+-1i","1+-1i"),ShouldEqual,"0+-2i")
+	//	So(complexNumberMultiply("2+2i","1-2i"),ShouldEqual,"-2+2i")
+	//})
+	fmt.Println(complexNumberMultiply("78+-76i", "-86+72i"))
+}
