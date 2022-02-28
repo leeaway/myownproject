@@ -1,4 +1,4 @@
-package leetcode
+package dailyExercise
 
 func luckyNumbers(matrix [][]int) []int {
 	m, n := len(matrix), len(matrix[0])

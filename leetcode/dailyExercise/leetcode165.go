@@ -1,4 +1,4 @@
-package leetcode
+package dailyExercise
 
 import (
 	"example.com/m/v2/tools/mathutil"

@@ -1,4 +1,4 @@
-package leetcode
+package dailyExercise
 
 func PushDominoes(dominoes string) string {
 	n, l := len(dominoes), 0

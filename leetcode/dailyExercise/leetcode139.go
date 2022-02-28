@@ -1,4 +1,4 @@
-package leetcode
+package dailyExercise
 
 func wordBreak(s string, wordDict []string) bool {
 	dictMap := make(map[string]bool)

@@ -1,4 +1,4 @@
-package leetcode
+package dailyExercise
 
 //直接模拟法，可能会OOM，空间复杂度8^k
 func KnightProbability(n int, k int, row int, column int) float64 {

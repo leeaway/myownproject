@@ -1,4 +1,4 @@
-package leetcode
+package dailyExercise
 
 func NumberOfGoodSubsets(nums []int) int {
 	banNum := []int{4, 8, 9, 12, 16, 18, 20, 24, 25, 27, 28}

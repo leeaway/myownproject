@@ -1,4 +1,4 @@
-package leetcode
+package dailyExercise
 
 func findBall(grid [][]int) []int {
 	n := len(grid[0])

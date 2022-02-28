@@ -1,4 +1,4 @@
-package leetcode
+package dailyExercise
 
 import (
 	"fmt"
@@ -55,4 +55,12 @@ func TestLeetcode537(t *testing.T) {
 	//	So(complexNumberMultiply("2+2i","1-2i"),ShouldEqual,"-2+2i")
 	//})
 	fmt.Println(complexNumberMultiply("78+-76i", "-86+72i"))
+}
+
+func TestLeecode1601(t *testing.T) {
+	Convey("Test1601", t, func() {
+		So(maximumRequests(5, [][]int{{0, 1}, {1, 0}, {0, 1}, {1, 2}, {2, 0}, {3, 4}}), ShouldEqual, 5)
+		So(maximumRequests(3, [][]int{{0, 0}, {1, 2}, {2, 1}}), ShouldEqual, 3)
+		So(maximumRequests(4, [][]int{{0, 3}, {3, 1}, {1, 2}, {2, 0}}), ShouldEqual, 4)
+	})
 }
