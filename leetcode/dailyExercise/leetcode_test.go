@@ -64,3 +64,10 @@ func TestLeecode1601(t *testing.T) {
 		So(maximumRequests(4, [][]int{{0, 3}, {3, 1}, {1, 2}, {2, 0}}), ShouldEqual, 4)
 	})
 }
+
+func TestLeecode504(t *testing.T) {
+	Convey("Test504", t, func() {
+		So(convertToBase7(100), ShouldEqual, "202")
+		So(convertToBase7(-7), ShouldEqual, "-10")
+	})
+}

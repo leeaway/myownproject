@@ -19,3 +19,22 @@ func TestHot002(t *testing.T) {
 		So(addTwoNumbers(NewListNode([]int{9, 9, 9, 9, 9, 9, 9}), NewListNode([]int{9, 9, 9, 9})), ShouldResemble, NewListNode([]int{8, 9, 9, 9, 0, 0, 0, 1}))
 	})
 }
+
+func TestHot003(t *testing.T) {
+	Convey("TestLengthOfLongestSubstring", t, func() {
+		So(lengthOfLongestSubstring("aba"), ShouldEqual, 2)
+		So(lengthOfLongestSubstring("abcdfg"), ShouldEqual, 6)
+		So(lengthOfLongestSubstring("aaaaa"), ShouldEqual, 1)
+		So(lengthOfLongestSubstring("pwwkew"), ShouldEqual, 3)
+		So(lengthOfLongestSubstring("abcabcbb"), ShouldEqual, 3)
+	})
+}
+
+func TestHot005(t *testing.T) {
+	Convey("TestLongestPalindrome", t, func() {
+		So(longestPalindrome("abbc"), ShouldEqual, "bb")
+		So(longestPalindrome("abad"), ShouldEqual, "aba")
+		So(longestPalindrome("babad"), ShouldEqual, "bab")
+		So(longestPalindrome("aaaaaaa"), ShouldEqual, "aaaaaaa")
+	})
+}
