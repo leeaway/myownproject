@@ -65,9 +65,16 @@ func TestLeecode1601(t *testing.T) {
 	})
 }
 
-func TestLeecode504(t *testing.T) {
+func TestLeetcode504(t *testing.T) {
 	Convey("Test504", t, func() {
 		So(convertToBase7(100), ShouldEqual, "202")
 		So(convertToBase7(-7), ShouldEqual, "-10")
+	})
+}
+
+func TestLeetcode2055(t *testing.T) {
+	Convey("test2055", t, func() {
+		So(platesBetweenCandles("**|**|***|", [][]int{{2, 5}, {5, 9}}), ShouldResemble, []int{2, 3})
+		So(platesBetweenCandles("***|**|*****|**||**|*", [][]int{{1, 17}, {4, 5}, {14, 17}, {5, 11}, {15, 16}}), ShouldResemble, []int{9, 0, 0, 0, 0})
 	})
 }
