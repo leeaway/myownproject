@@ -78,3 +78,20 @@ func TestLeetcode2055(t *testing.T) {
 		So(platesBetweenCandles("***|**|*****|**||**|*", [][]int{{1, 17}, {4, 5}, {14, 17}, {5, 11}, {15, 16}}), ShouldResemble, []int{9, 0, 0, 0, 0})
 	})
 }
+
+func TestLeecode2049(t *testing.T) {
+	Convey("test2049", t, func() {
+		So(countHighestScoreNodes([]int{-1, 2, 0, 2, 0}), ShouldEqual, 3)
+		So(countHighestScoreNodes([]int{-1, 2, 0}), ShouldEqual, 2)
+		So(countHighestScoreNodes([]int{-1, 8, 9, 7, 6, 2, 9, 8, 0, 0}), ShouldEqual, 2)
+		So(countHighestScoreNodes([]int{-1, 0, 17, 6, 16, 16, 17, 19, 6, 4, 2, 1, 5, 11, 3, 10, 1, 0, 20, 11, 2}), ShouldEqual, 2)
+	})
+}
+
+func TestLeetcode393(t *testing.T) {
+	Convey("test393", t, func() {
+		//So(validUtf8([]int{235,140,4}),ShouldEqual,false)
+		//So(validUtf8([]int{197,130,1}),ShouldEqual,true)
+		So(validUtf8([]int{255}), ShouldEqual, false)
+	})
+}
