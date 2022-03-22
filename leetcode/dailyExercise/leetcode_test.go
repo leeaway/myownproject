@@ -95,3 +95,13 @@ func TestLeetcode393(t *testing.T) {
 		So(validUtf8([]int{255}), ShouldEqual, false)
 	})
 }
+
+func TestLeetcode2039(t *testing.T) {
+	//fmt.Println(networkBecomesIdle([][]int{{0,1},{1,2},{1,3},{2,4}},[]int{0,2,1,1,1}))
+	//fmt.Println(networkBecomesIdle([][]int{{0,1},{0,2},{1,2}},[]int{0,10,10}))
+	fmt.Println(networkBecomesIdle([][]int{{3, 8}, {4, 13}, {0, 7}, {0, 4}, {1, 8}, {14, 1}, {7, 2}, {13, 10}, {9, 11}, {12, 14}, {0, 6}, {2, 12}, {11, 5}, {6, 9}, {10, 3}}, []int{0, 3, 2, 1, 5, 1, 5, 5, 3, 1, 2, 2, 2, 2, 1}))
+}
+
+func TestLeecode2211(t *testing.T) {
+	fmt.Println(countCollisions("LLRR"))
+}
