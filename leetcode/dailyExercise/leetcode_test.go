@@ -105,3 +105,15 @@ func TestLeetcode2039(t *testing.T) {
 func TestLeecode2211(t *testing.T) {
 	fmt.Println(countCollisions("LLRR"))
 }
+
+func TestLeetcode49(t *testing.T) {
+	fmt.Println(groupAnagrams([]string{"ddddddddddg", "dgggggggggg"}))
+}
+
+func TestLeetcode547(t *testing.T) {
+	fmt.Println(findCircleNum([][]int{{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}))
+}
+
+func TestLeetcode440(t *testing.T) {
+	fmt.Println(getCountWithPrefix(1, 13))
+}

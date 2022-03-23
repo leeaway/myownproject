@@ -2,6 +2,7 @@ package sortMethod
 
 /*
 	冒泡排序，时间复杂度O(N^2),稳定排序
+	类似冒泡的过程，每次都会选出最大值
 */
 func bubbleSort(nums []int) []int {
 	for i := 0; i < len(nums); i++ {
