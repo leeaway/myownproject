@@ -117,3 +117,28 @@ func TestLeetcode547(t *testing.T) {
 func TestLeetcode440(t *testing.T) {
 	fmt.Println(getCountWithPrefix(1, 13))
 }
+
+func TestLeetCode5253(t *testing.T) {
+	Convey("test5253", t, func() {
+		So(kthPalindrome([]int{90}, 3), ShouldResemble, []int64{999})
+		So(kthPalindrome([]int{98043237}, 15), ShouldResemble, []int64{-1})
+		So(kthPalindrome([]int{96}, 5), ShouldResemble, []int64{19591})
+		So(kthPalindrome([]int{2}, 2), ShouldResemble, []int64{22})
+	})
+}
+
+func TestLeetcode2024(t *testing.T) {
+	Convey("Test2024", t, func() {
+		So(maxConsecutiveAnswers("TTTFFFT", 2), ShouldEqual, 5)
+		So(maxConsecutiveAnswers("TTFFFFT", 2), ShouldEqual, 6)
+		So(maxConsecutiveAnswers("TTTTTTT", 1), ShouldEqual, 7)
+		So(maxConsecutiveAnswers("TFTFTFTTTTFFFF", 1), ShouldEqual, 6)
+	})
+}
+
+func TestLeetcode728(t *testing.T) {
+	Convey("Test728", t, func() {
+		So(selfDividingNumbers(47, 85), ShouldResemble, []int{48, 55, 66, 77})
+		So(selfDividingNumbers(10, 22), ShouldResemble, []int{11, 12, 15, 22})
+	})
+}
