@@ -142,3 +142,12 @@ func TestLeetcode728(t *testing.T) {
 		So(selfDividingNumbers(10, 22), ShouldResemble, []int{11, 12, 15, 22})
 	})
 }
+
+func TestLeetcode954(t *testing.T) {
+	Convey("test954", t, func() {
+		So(canReorderDoubled([]int{1, 2, 2, 4}), ShouldEqual, true)
+		So(canReorderDoubled([]int{1, 3, 3, 6}), ShouldEqual, false)
+		So(canReorderDoubled([]int{4, -2, 2, -4}), ShouldEqual, true)
+		So(canReorderDoubled([]int{2, 4, 0, 0, 8, 1}), ShouldEqual, true)
+	})
+}
