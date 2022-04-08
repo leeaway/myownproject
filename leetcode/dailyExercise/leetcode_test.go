@@ -151,3 +151,26 @@ func TestLeetcode954(t *testing.T) {
 		So(canReorderDoubled([]int{2, 4, 0, 0, 8, 1}), ShouldEqual, true)
 	})
 }
+
+func TestLeetcode420(t *testing.T) {
+	Convey("test420", t, func() {
+		So(strongPasswordChecker("1337C0d3"), ShouldEqual, 0)
+		So(strongPasswordChecker("1333C0d3"), ShouldEqual, 1)
+	})
+}
+
+func TestLeetCode746(t *testing.T) {
+	Convey("test746", t, func() {
+		So(minCostClimbingStairs([]int{10, 15, 20}), ShouldEqual, 15)
+	})
+}
+
+func TestLeetcode54(t *testing.T) {
+	Convey("test54", t, func() {
+		So(jump([]int{2, 3, 1, 1, 4}), ShouldEqual, 2)
+	})
+}
+
+func TestLeetcode310(t *testing.T) {
+	fmt.Println(findMinHeightTrees(4, [][]int{{1, 0}, {1, 2}, {1, 3}}))
+}
