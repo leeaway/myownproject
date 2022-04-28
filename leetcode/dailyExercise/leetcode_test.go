@@ -174,3 +174,44 @@ func TestLeetcode54(t *testing.T) {
 func TestLeetcode310(t *testing.T) {
 	fmt.Println(findMinHeightTrees(4, [][]int{{1, 0}, {1, 2}, {1, 3}}))
 }
+
+func TestLeetCode1567(t *testing.T) {
+	Convey("test", t, func() {
+		So(getMaxLen([]int{0, 1, -2, -3, -4}), ShouldEqual, 3)
+	})
+}
+
+func TestLeet380(t *testing.T) {
+	set := Constructor()
+	set.Insert(0)
+	set.Insert(1)
+	set.Remove(0)
+	set.Insert(2)
+	set.Remove(1)
+	fmt.Println(set.GetRandom())
+}
+
+func DeferTest(flag bool) int {
+	a := 0
+	if flag {
+		return a
+	}
+	defer func() {
+		fmt.Println("defer")
+	}()
+	return a
+}
+
+func TestDefer(t *testing.T) {
+	Convey("test", t, func() {
+		So(DeferTest(true), ShouldEqual, 0)
+		So(DeferTest(false), ShouldEqual, 0)
+	})
+}
+
+func Test905(t *testing.T) {
+	Convey("test", t, func() {
+		So(sortArrayByParity([]int{3, 1, 2, 4}), ShouldResemble, []int{4, 2, 1, 3})
+		So(sortArrayByParity([]int{1, 2, 3, 4}), ShouldResemble, []int{4, 2, 3, 1})
+	})
+}
