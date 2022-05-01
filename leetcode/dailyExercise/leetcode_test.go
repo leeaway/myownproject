@@ -215,3 +215,13 @@ func Test905(t *testing.T) {
 		So(sortArrayByParity([]int{1, 2, 3, 4}), ShouldResemble, []int{4, 2, 3, 1})
 	})
 }
+
+func Test2249(t *testing.T) {
+	Convey("test", t, func() {
+		So(countLatticePoints([][]int{{2, 2, 2}}), ShouldEqual, 25)
+	})
+}
+
+func Test6043(t *testing.T) {
+	fmt.Println(countRectangles([][]int{{1, 1}, {1, 3}, {2, 1}, {2, 3}, {3, 3}}, [][]int{{1, 2}, {1, 1}, {2, 3}}))
+}
