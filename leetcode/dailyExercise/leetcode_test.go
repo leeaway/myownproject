@@ -225,3 +225,36 @@ func Test2249(t *testing.T) {
 func Test6043(t *testing.T) {
 	fmt.Println(countRectangles([][]int{{1, 1}, {1, 3}, {2, 1}, {2, 3}, {3, 3}}, [][]int{{1, 2}, {1, 1}, {2, 3}}))
 }
+
+func Test713(t *testing.T) {
+	fmt.Println(numSubarrayProductLessThanK([]int{1, 1, 1}, 1))
+}
+
+func Test433(t *testing.T) {
+	Convey("test433", t, func() {
+		So(minMutation("AACCGGTT", "AAACGGTA", []string{"AACCGGTA", "AACCGCTA", "AAACGGTA"}), ShouldEqual, 2)
+		So(minMutation("AAAAACCC", "AACCCCCC", []string{"AAAACCCC", "AAACCCCC", "AACCCCCC"}), ShouldEqual, 3)
+	})
+}
+
+func Test942(t *testing.T) {
+	fmt.Println(diStringMatch("IDID"))
+}
+
+func TestS(t *testing.T) {
+	strs := []string{"a", "a", "b", "c", "c", "b", "b", "b", "b", "a"}
+	i := 0
+	for i < len(strs) {
+		if i < len(strs)-1 && strs[i] == strs[i+1] {
+			strs = removeStr(strs, i)
+			continue
+		}
+		i++
+	}
+	fmt.Println(strs)
+}
+
+func removeStr(strs []string, index int) []string {
+	copy(strs[index:], strs[index+1:])
+	return strs[:len(strs)-1]
+}

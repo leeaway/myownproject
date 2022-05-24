@@ -15,13 +15,13 @@ func main() {
 	//fmt.Println(newTrieTree.FindWord("kitty"))
 	//fmt.Println(newTrieTree.FuzzyFindWord("kitty"))
 	//AOP
-	//h := &HelloAop{}
-	//h.TestAop()
+	h := &HelloAop{}
+	h.TestAop()
 	//fmt.Println(collections.NewKMP("ABABC").Search("ABABBABACDABABACCDFA"))
 	//fmt.Println(dailyExercise.CompareVersion("1.2", "1.10"))
 	//exercise.ConcurrentCountWithoutMutex()
 	//exercise.ConcurrentCountWithMutex()
-	demo.ASTDemo()
+	//demo.ASTDemo()
 }
 
 func init() {
