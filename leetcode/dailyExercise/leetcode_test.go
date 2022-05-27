@@ -241,20 +241,25 @@ func Test942(t *testing.T) {
 	fmt.Println(diStringMatch("IDID"))
 }
 
-func TestS(t *testing.T) {
-	strs := []string{"a", "a", "b", "c", "c", "b", "b", "b", "b", "a"}
-	i := 0
-	for i < len(strs) {
-		if i < len(strs)-1 && strs[i] == strs[i+1] {
-			strs = removeStr(strs, i)
-			continue
-		}
-		i++
-	}
-	fmt.Println(strs)
+func Test675(t *testing.T) {
+	Convey("test675", t, func() {
+		//So(cutOffTree([][]int{{1,2,1},{0,0,4},{7,6,5}}),ShouldEqual,6)
+		//So(cutOffTree([][]int{{1,2,1},{3,0,4},{7,6,5}}),ShouldEqual,10)
+		//So(cutOffTree([][]int{{1,2,1},{0,0,0},{7,6,5}}),ShouldEqual,-1)
+		So(cutOffTree([][]int{{54581641, 64080174, 24346381, 69107959}, {86374198, 61363882, 68783324, 79706116}, {668150, 92178815, 89819108, 94701471}, {83920491, 22724204, 46281641, 47531096}, {89078499, 18904913, 25462145, 60813308}}), ShouldEqual, 57)
+	})
 }
 
-func removeStr(strs []string, index int) []string {
-	copy(strs[index:], strs[index+1:])
-	return strs[:len(strs)-1]
+func Test467(t *testing.T) {
+	fmt.Println(findSubstringInWraproundString("abcdefghijklmnopqrstuvwxyzab"))
+}
+
+func Test699(t *testing.T) {
+	fmt.Println(fallingSquares([][]int{{1, 2}, {2, 3}, {6, 1}}))
+	fmt.Println(fallingSquares([][]int{{100, 100}, {200, 100}, {6, 1}}))
+	fmt.Println(fallingSquares([][]int{{0, 5}, {2, 3}, {0, 1}}))
+}
+
+func Test17_11(t *testing.T) {
+	fmt.Println(findClosest([]string{"I", "am", "a", "student", "from", "a", "university", "in", "a", "city"}, "a", "student"))
 }
