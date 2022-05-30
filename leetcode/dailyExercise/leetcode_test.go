@@ -263,3 +263,7 @@ func Test699(t *testing.T) {
 func Test17_11(t *testing.T) {
 	fmt.Println(findClosest([]string{"I", "am", "a", "student", "from", "a", "university", "in", "a", "city"}, "a", "student"))
 }
+
+func Test1022(t *testing.T) {
+	fmt.Println(sumRootToLeaf("1010101"))
+}
