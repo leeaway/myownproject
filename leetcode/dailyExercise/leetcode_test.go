@@ -264,6 +264,21 @@ func Test17_11(t *testing.T) {
 	fmt.Println(findClosest([]string{"I", "am", "a", "student", "from", "a", "university", "in", "a", "city"}, "a", "student"))
 }
 
-func Test1022(t *testing.T) {
-	fmt.Println(sumRootToLeaf("1010101"))
+func Test114(t *testing.T) {
+	fmt.Println(alienOrder([]string{"z","x","z"}))
+	fmt.Println(alienOrder([]string{"abc","ab"}))
+}
+
+func Test473(t *testing.T) {
+	fmt.Println(makesquare([]int{13,11,1,8,6,7,8,8,6,7,8,9,8}))
+	fmt.Println(makesquare([]int{1,1,2,3,3,4,2}))
+	fmt.Println(makesquare([]int{1,1,2,2,2}))
+}
+
+func Test1175(t *testing.T) {
+	fmt.Println(numPrimeArrangements(100))
+}
+
+func Test556(t *testing.T) {
+	nextPermutation([]int{2,3,1})
 }

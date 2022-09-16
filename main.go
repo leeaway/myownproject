@@ -2,26 +2,19 @@ package main
 
 import (
 	"example.com/m/v2/demo"
+	"example.com/m/v2/echart"
 	"fmt"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"net/http"
 	"reflect"
 )
 
 func main() {
-	//newTrieTree := collections.CreateTrieTree([]string{"how", "hi", "hello", "so", "see", "he", "her"})
-	//fmt.Println(newTrieTree.FindWord("her"))
-	//fmt.Println(newTrieTree.FindWord("kitty"))
-	//newTrieTree.AddWord("kitty")
-	//fmt.Println(newTrieTree.FindWord("kitty"))
-	//fmt.Println(newTrieTree.FuzzyFindWord("kitty"))
-	//AOP
-	h := &HelloAop{}
-	h.TestAop()
-	//fmt.Println(collections.NewKMP("ABABC").Search("ABABBABACDABABACCDFA"))
-	//fmt.Println(dailyExercise.CompareVersion("1.2", "1.10"))
-	//exercise.ConcurrentCountWithoutMutex()
-	//exercise.ConcurrentCountWithMutex()
-	//demo.ASTDemo()
+	echart.EchartBar()
+	http.HandleFunc("/line", echart.Httpserver)
+	http.HandleFunc("/pie", echart.HttpserverPie)
+	http.HandleFunc("/bar3d", echart.HttpserverBar3D)
+	http.ListenAndServe(":8081", nil)
 }
 
 func init() {
