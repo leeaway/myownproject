@@ -50,64 +50,31 @@ func HttpserverPie(w http.ResponseWriter, _ *http.Request) {
 
 	// Put data into instance
 	var params []opts.PieData
-	for i:=0;i<4;i++ {
-		params = append(params,opts.PieData{
-			Name:      fmt.Sprintf("kaifeng.dong%d",i),
-			Value:     i*i+1,
-			Selected:  i%2==0,
-			Label:     &opts.Label{
-				Show:      true,
-				Color:     "auto",
-				Position:  "top",
+	for i := 0; i < 4; i++ {
+		params = append(params, opts.PieData{
+			Name:     fmt.Sprintf("kaifeng.dong%d", i),
+			Value:    i*i + 1,
+			Selected: i%2 == 0,
+			Label: &opts.Label{
+				Show:     true,
+				Color:    "auto",
+				Position: "top",
 			},
 			ItemStyle: &opts.ItemStyle{
-				Color:        "auto",
-				BorderColor:  "auto",
+				Color:       "auto",
+				BorderColor: "auto",
 			},
 			Tooltip: &opts.Tooltip{
-				Show:        true,
-				Trigger:     "item",
-				TriggerOn:   "mousemove|click",
-				Formatter:   "{c}",
+				Show:      true,
+				Trigger:   "item",
+				TriggerOn: "mousemove|click",
+				Formatter: "{c}",
 				AxisPointer: &opts.AxisPointer{
 					Snap: true,
 				},
 			},
 		})
 	}
-	pie.AddSeries("test pie",params)
+	pie.AddSeries("test pie", params)
 	pie.Render(w)
-}
-
-func HttpserverBar3D(w http.ResponseWriter, _ *http.Request) {
-	// create a new line instance
-	bar3D := charts.NewBar3D()
-	// set some global options like Title/Legend/ToolTip or anything else
-	bar3D.SetGlobalOptions(
-		charts.WithInitializationOpts(opts.Initialization{Theme: types.ThemeShine}),
-		charts.WithTitleOpts(opts.Title{
-			Title:    "Bar3D example",
-			Subtitle: "Bar3D chart rendered by the http server this time",
-		}),
-		charts.WithGrid3DOpts(opts.Grid3D{}))
-
-	// Put data into instance
-	var params []opts.Chart3DData
-	for i:=0;i<4;i++ {
-		params = append(params,opts.Chart3DData{
-			Name:      fmt.Sprintf("kaifeng.dong%d",i),
-			Value:     []interface{}{i*i+1,i*i+2,i*i+3},
-			//Label:     &opts.Label{
-			//	Show:      true,
-			//	Color:     "auto",
-			//	Position:  "top",
-			//},
-			//ItemStyle: &opts.ItemStyle{
-			//	Color:        "auto",
-			//	BorderColor:  "auto",
-			//},
-		})
-	}
-	bar3D.AddSeries("test pie",params)
-	bar3D.Render(w)
 }
