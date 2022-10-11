@@ -265,14 +265,14 @@ func Test17_11(t *testing.T) {
 }
 
 func Test114(t *testing.T) {
-	fmt.Println(alienOrder([]string{"z","x","z"}))
-	fmt.Println(alienOrder([]string{"abc","ab"}))
+	fmt.Println(alienOrder([]string{"z", "x", "z"}))
+	fmt.Println(alienOrder([]string{"abc", "ab"}))
 }
 
 func Test473(t *testing.T) {
-	fmt.Println(makesquare([]int{13,11,1,8,6,7,8,8,6,7,8,9,8}))
-	fmt.Println(makesquare([]int{1,1,2,3,3,4,2}))
-	fmt.Println(makesquare([]int{1,1,2,2,2}))
+	fmt.Println(makesquare([]int{13, 11, 1, 8, 6, 7, 8, 8, 6, 7, 8, 9, 8}))
+	fmt.Println(makesquare([]int{1, 1, 2, 3, 3, 4, 2}))
+	fmt.Println(makesquare([]int{1, 1, 2, 2, 2}))
 }
 
 func Test1175(t *testing.T) {
@@ -280,5 +280,17 @@ func Test1175(t *testing.T) {
 }
 
 func Test556(t *testing.T) {
-	nextPermutation([]int{2,3,1})
+	nextPermutation([]int{2, 3, 1})
+}
+
+func Test801(t *testing.T) {
+	fmt.Println(minSwap([]int{0, 7, 8, 10, 10, 11, 12, 13, 19, 18}, []int{4, 4, 5, 7, 11, 14, 15, 16, 17, 20}))
+}
+
+func Test1790(t *testing.T) {
+	Convey("1790", t, func() {
+		So(areAlmostEqual("bank", "kanb"), ShouldEqual, true)
+		So(areAlmostEqual("bank", "knab"), ShouldEqual, false)
+		So(areAlmostEqual("bank", "bank"), ShouldEqual, true)
+	})
 }
