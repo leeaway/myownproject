@@ -33,3 +33,9 @@ func Test04(t *testing.T) {
 		So(findNumberIn2DArray2(matrix, 9), ShouldEqual, false)
 	})
 }
+
+func Test05(t *testing.T) {
+	Convey("test05", t, func() {
+		So(replaceSpace("hello world"), ShouldEqual, "hello%20world")
+	})
+}
