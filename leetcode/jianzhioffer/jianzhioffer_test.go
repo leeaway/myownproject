@@ -91,3 +91,40 @@ func Test07(t *testing.T) {
 		})
 	})
 }
+
+func Test09(t *testing.T) {
+	Convey("两个栈实现队列", t, func() {
+		cQue := Constructor()
+		cQue.AppendTail(1)
+		cQue.AppendTail(2)
+		So(cQue.DeleteHead(), ShouldEqual, 1)
+		cQue.AppendTail(3)
+		cQue.AppendTail(4)
+		So(cQue.DeleteHead(), ShouldEqual, 2)
+		So(cQue.DeleteHead(), ShouldEqual, 3)
+		cQue.AppendTail(5)
+		So(cQue.DeleteHead(), ShouldEqual, 4)
+		So(cQue.DeleteHead(), ShouldEqual, 5)
+	})
+}
+
+func Test10(t *testing.T) {
+	Convey("斐波那契", t, func() {
+		So(fib_dp(100), ShouldEqual, 687995182)
+		So(fib_recursive(40), ShouldEqual, fib_dp(40))
+	})
+}
+
+func Test11(t *testing.T) {
+	Convey("旋转数组的最小值", t, func() {
+		So(minArray([]int{3, 4, 5, 1, 2}), ShouldEqual, 1)
+		So(minArray([]int{2, 2, 2, 2, 2, 2}), ShouldEqual, 2)
+		So(minArray([]int{3, 4, 5, 6, 3, 3, 3}), ShouldEqual, 3)
+		So(minArray([]int{3, 4, 5, 6, 2, 3, 3}), ShouldEqual, 2)
+
+		So(minArray2([]int{3, 4, 5, 1, 2}), ShouldEqual, 1)
+		So(minArray2([]int{2, 2, 2, 2, 2, 2}), ShouldEqual, 2)
+		So(minArray2([]int{3, 4, 5, 6, 3, 3, 3}), ShouldEqual, 3)
+		So(minArray2([]int{3, 4, 5, 6, 2, 3, 3}), ShouldEqual, 2)
+	})
+}
