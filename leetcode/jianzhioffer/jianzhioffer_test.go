@@ -11,14 +11,14 @@ import (
  */
 
 func Test03(t *testing.T) {
-	Convey("test03", t, func() {
+	Convey("找出重复数字", t, func() {
 		So(findRepeatNumber1([]int{1, 3, 4, 5, 6, 2, 3}), ShouldEqual, 3)
 		So(findRepeatNumber2([]int{1, 3, 4, 5, 6, 2, 3}), ShouldEqual, 3)
 	})
 }
 
 func Test04(t *testing.T) {
-	Convey("test04", t, func() {
+	Convey("查找二维数组", t, func() {
 		matrix := [][]int{
 			{11, 12, 13, 14, 15},
 			{16, 17, 18, 19, 20},
@@ -35,7 +35,59 @@ func Test04(t *testing.T) {
 }
 
 func Test05(t *testing.T) {
-	Convey("test05", t, func() {
+	Convey("替换空格", t, func() {
 		So(replaceSpace("hello world"), ShouldEqual, "hello%20world")
+	})
+}
+
+func Test06(t *testing.T) {
+	node3 := &ListNode{
+		Val:  3,
+		Next: nil,
+	}
+	node2 := &ListNode{
+		Val:  2,
+		Next: node3,
+	}
+	node1 := &ListNode{
+		Val:  1,
+		Next: node2,
+	}
+	head := &ListNode{
+		Val:  0,
+		Next: node1,
+	}
+	Convey("从尾到头打印联表", t, func() {
+		So(reversePrint1(head), ShouldResemble, []int{3, 2, 1, 0})
+		So(reversePrint1_recurse(head), ShouldResemble, []int{3, 2, 1, 0})
+		So(reversePrint2(head), ShouldResemble, []int{3, 2, 1, 0})
+	})
+}
+
+func Test07(t *testing.T) {
+	Convey("重建二叉树", t, func() {
+		Convey("左右子树都有", func() {
+			preorder := []int{3, 9, 20, 15, 7}
+			inorder := []int{9, 3, 15, 20, 7}
+			tree := buildTree(preorder, inorder)
+			So(preOrder(tree, []int{}), ShouldResemble, preorder)
+			So(inOrder(tree, []int{}), ShouldResemble, inorder)
+		})
+
+		Convey("没有左子树", func() {
+			preorder2 := []int{3, 20, 15, 7}
+			inorder2 := []int{3, 15, 20, 7}
+			tree2 := buildTree(preorder2, inorder2)
+			So(preOrder(tree2, []int{}), ShouldResemble, preorder2)
+			So(inOrder(tree2, []int{}), ShouldResemble, inorder2)
+		})
+
+		Convey("没有右子树", func() {
+			preorder2 := []int{3, 10, 9, 11}
+			inorder2 := []int{9, 10, 11, 3}
+			tree2 := buildTree(preorder2, inorder2)
+			So(preOrder(tree2, []int{}), ShouldResemble, preorder2)
+			So(inOrder(tree2, []int{}), ShouldResemble, inorder2)
+		})
 	})
 }
