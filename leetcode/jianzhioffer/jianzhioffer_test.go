@@ -128,3 +128,31 @@ func Test11(t *testing.T) {
 		So(minArray2([]int{3, 4, 5, 6, 2, 3, 3}), ShouldEqual, 2)
 	})
 }
+
+func Test12(t *testing.T) {
+	Convey("矩阵中的路径", t, func() {
+		board1 := [][]byte{
+			{'A', 'B', 'C', 'D'},
+			{'D', 'E', 'F', 'G'},
+			{'C', 'E', 'C', 'K'},
+			{'D', 'F', 'B', 'A'},
+		}
+		board2 := [][]byte{
+			{'C', 'A', 'A'},
+			{'A', 'A', 'A'},
+			{'B', 'C', 'D'},
+		}
+		So(exist(board1, "CFCB"), ShouldEqual, true)
+		So(exist(board1, "BCFCBFD"), ShouldEqual, true)
+		So(exist(board1, "CDCB"), ShouldEqual, false)
+		So(exist(board2, "AAB"), ShouldEqual, true)
+	})
+}
+
+func Test14_1(t *testing.T) {
+	Convey("剪绳子I", t, func() {
+		So(cuttingRope(3), ShouldEqual, 2)
+		So(cuttingRope(4), ShouldEqual, 4)
+		So(cuttingRope(10), ShouldEqual, 36)
+	})
+}
