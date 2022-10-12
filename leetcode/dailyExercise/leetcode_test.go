@@ -294,3 +294,33 @@ func Test1790(t *testing.T) {
 		So(areAlmostEqual("bank", "bank"), ShouldEqual, true)
 	})
 }
+
+func Test817(t *testing.T) {
+	Convey("链表组件", t, func() {
+		node3 := &ListNode{
+			Val:  3,
+			Next: nil,
+		}
+		node2 := &ListNode{
+			Val:  2,
+			Next: node3,
+		}
+		node1 := &ListNode{
+			Val:  1,
+			Next: node2,
+		}
+		head := &ListNode{
+			Val:  0,
+			Next: node1,
+		}
+		So(numComponents(head, []int{0, 1, 3}), ShouldEqual, 2)
+		So(numComponents(head, []int{1, 3, 0}), ShouldEqual, 2)
+	})
+}
+
+func Test1320(t *testing.T) {
+	Convey("test1320", t, func() {
+		So(minimumDistance("CAKE"), ShouldEqual, 3)
+		So(minimumDistance("HAPPY"), ShouldEqual, 6)
+	})
+}
