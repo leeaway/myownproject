@@ -156,3 +156,47 @@ func Test14_1(t *testing.T) {
 		So(cuttingRope(10), ShouldEqual, 36)
 	})
 }
+
+func Test15(t *testing.T) {
+	Convey("二进制中1的个数", t, func() {
+		So(hammingWeight2(11), ShouldEqual, 3)
+		So(hammingWeight2(128), ShouldEqual, 1)
+		So(hammingWeight1(11), ShouldEqual, 3)
+		So(hammingWeight1(128), ShouldEqual, 1)
+	})
+}
+
+func Test16(t *testing.T) {
+	Convey("数值的整数次方", t, func() {
+		So(myPow(2.00000, 10), ShouldEqual, 1024.00000)
+		So(myPow(2.00000, -2), ShouldEqual, 0.25000)
+	})
+}
+
+func Test17(t *testing.T) {
+	Convey("打印从1到最大的n位数", t, func() {
+		So(printNumbers(1), ShouldResemble, []int{1, 2, 3, 4, 5, 6, 7, 8, 9})
+	})
+}
+
+func Test18(t *testing.T) {
+	Convey("删除链表节点", t, func() {
+		node3 := &ListNode{
+			Val:  3,
+			Next: nil,
+		}
+		node2 := &ListNode{
+			Val:  2,
+			Next: node3,
+		}
+		node1 := &ListNode{
+			Val:  1,
+			Next: node2,
+		}
+		head := &ListNode{
+			Val:  0,
+			Next: node1,
+		}
+		So(deleteNode(head, 1).Show(), ShouldResemble, []int{0, 2, 3})
+	})
+}

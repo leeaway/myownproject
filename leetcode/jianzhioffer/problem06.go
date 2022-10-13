@@ -27,6 +27,15 @@ type ListNode struct {
 	Next *ListNode
 }
 
+func (l *ListNode) Show() []int {
+	var res []int
+	for l != nil {
+		res = append(res, l.Val)
+		l = l.Next
+	}
+	return res
+}
+
 /*
 方法一：迭代
 	每次append到头部即可
