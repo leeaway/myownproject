@@ -324,3 +324,23 @@ func Test1320(t *testing.T) {
 		So(minimumDistance("HAPPY"), ShouldEqual, 6)
 	})
 }
+
+func Test940(t *testing.T) {
+	Convey("test940", t, func() {
+		So(distinctSubseqII("abc"), ShouldEqual, 7)
+		So(distinctSubseqII("aaa"), ShouldEqual, 3)
+		So(distinctSubseqII("aba"), ShouldEqual, 6)
+		So(distinctSubseqII("lee"), ShouldEqual, 5)
+	})
+}
+
+func Test904(t *testing.T) {
+	Convey("水果成篮", t, func() {
+		So(totalFruit([]int{1}), ShouldEqual, 1)
+		So(totalFruit([]int{1, 2, 2}), ShouldEqual, 3)
+		So(totalFruit([]int{0, 1, 2, 2}), ShouldEqual, 3)
+		So(totalFruit([]int{1, 2, 3, 2, 2}), ShouldEqual, 4)
+		So(totalFruit([]int{1, 0, 1, 4, 1, 4, 1, 2, 3}), ShouldEqual, 5)
+		So(totalFruit([]int{3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4}), ShouldEqual, 5)
+	})
+}
