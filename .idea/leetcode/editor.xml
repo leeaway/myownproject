@@ -47,6 +47,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[902]最大为 N 的数字组合.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[902]最大为 N 的数字组合.md" />
+              <option name="frontendQuestionId" value="leetcode.cn902" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[902]最大为 N 的数字组合.go" />
+              <option name="titleSlug" value="numbers-at-most-n-given-digit-set" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[904]水果成篮.go">
           <value>
             <LeetcodeEditor>
@@ -242,6 +253,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[剑指 Offer 18]删除链表的节点.go" />
               <option name="titleSlug" value="shan-chu-lian-biao-de-jie-dian-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[剑指 Offer 20]表示数值的字符串.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[剑指 Offer 20]表示数值的字符串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 20" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[剑指 Offer 20]表示数值的字符串.go" />
+              <option name="titleSlug" value="biao-shi-shu-zhi-de-zi-fu-chuan-lcof" />
             </LeetcodeEditor>
           </value>
         </entry>

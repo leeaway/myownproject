@@ -344,3 +344,13 @@ func Test904(t *testing.T) {
 		So(totalFruit([]int{3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4}), ShouldEqual, 5)
 	})
 }
+
+func Test902(t *testing.T) {
+	Convey("最大为N的数字组合", t, func() {
+		So(atMostNGivenDigitSet([]string{"1", "7"}, 231), ShouldEqual, 10)
+		So(atMostNGivenDigitSet([]string{"1", "2", "3", "4"}, 1), ShouldEqual, 1)
+		So(atMostNGivenDigitSet([]string{"1", "3", "5", "7"}, 100), ShouldEqual, 20)
+		So(atMostNGivenDigitSet([]string{"1", "4", "9"}, 1e9), ShouldEqual, 29523)
+		So(atMostNGivenDigitSet([]string{"3", "4", "5", "6"}, 64), ShouldEqual, 18)
+	})
+}
