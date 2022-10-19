@@ -354,3 +354,10 @@ func Test902(t *testing.T) {
 		So(atMostNGivenDigitSet([]string{"3", "4", "5", "6"}, 64), ShouldEqual, 18)
 	})
 }
+
+func Test1700(t *testing.T) {
+	Convey("无法吃午餐的学生数量", t, func() {
+		So(countStudents([]int{1, 1, 0, 0}, []int{0, 1, 0, 1}), ShouldEqual, 0)
+		So(countStudents([]int{1, 1, 1, 0, 0, 1}, []int{1, 0, 0, 0, 1, 1}), ShouldEqual, 3)
+	})
+}
