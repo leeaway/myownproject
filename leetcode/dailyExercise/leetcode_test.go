@@ -361,3 +361,27 @@ func Test1700(t *testing.T) {
 		So(countStudents([]int{1, 1, 1, 0, 0, 1}, []int{1, 0, 0, 0, 1, 1}), ShouldEqual, 3)
 	})
 }
+
+func Test915(t *testing.T) {
+	Convey("分割数组", t, func() {
+		So(partitionDisjoint([]int{1, 1, 1, 1, 1}), ShouldEqual, 1)
+		So(partitionDisjoint([]int{5, 0, 3, 8, 6}), ShouldEqual, 3)
+		So(partitionDisjoint([]int{1, 2, 3, 4, 5, 6}), ShouldEqual, 1)
+		So(partitionDisjoint([]int{1, 3, 2, 4, 5, 7}), ShouldEqual, 1)
+		So(partitionDisjoint([]int{1, 1, 1, 0, 6, 12}), ShouldEqual, 4)
+
+		So(partitionDisjoint2([]int{1, 1, 1, 1, 1}), ShouldEqual, 1)
+		So(partitionDisjoint2([]int{5, 0, 3, 8, 6}), ShouldEqual, 3)
+		So(partitionDisjoint2([]int{1, 2, 3, 4, 5, 6}), ShouldEqual, 1)
+		So(partitionDisjoint2([]int{1, 3, 2, 4, 5, 7}), ShouldEqual, 1)
+		So(partitionDisjoint2([]int{1, 1, 1, 0, 6, 12}), ShouldEqual, 4)
+	})
+}
+
+func Test1822(t *testing.T) {
+	Convey("数组符号", t, func() {
+		So(arraySign([]int{-1, -2, -3, -4, 3, 2, 1}), ShouldEqual, 1)
+		So(arraySign([]int{-1, 1, -1, 1, -1}), ShouldEqual, -1)
+		So(arraySign([]int{-1, 1, -1, 1, -1, 0, 1}), ShouldEqual, 0)
+	})
+}
