@@ -14,6 +14,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1662]检查两个字符串数组是否相等.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[1662]检查两个字符串数组是否相等.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1662" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1662]检查两个字符串数组是否相等.go" />
+              <option name="titleSlug" value="check-if-two-string-arrays-are-equivalent" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1700]无法吃午餐的学生数量.go">
           <value>
             <LeetcodeEditor>
@@ -44,6 +55,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1822]数组元素积的符号.go" />
               <option name="titleSlug" value="sign-of-the-product-of-an-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[481]神奇字符串.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[481]神奇字符串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn481" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[481]神奇字符串.go" />
+              <option name="titleSlug" value="magical-string" />
             </LeetcodeEditor>
           </value>
         </entry>
