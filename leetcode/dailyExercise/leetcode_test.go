@@ -385,3 +385,12 @@ func Test1822(t *testing.T) {
 		So(arraySign([]int{-1, 1, -1, 1, -1, 0, 1}), ShouldEqual, 0)
 	})
 }
+
+func Test754(t *testing.T) {
+	Convey("到达终点数字", t, func() {
+		So(reachNumber(2), ShouldEqual, 3)
+		So(reachNumber(3), ShouldEqual, 2)
+		So(reachNumber(120), ShouldEqual, 15)
+		So(reachNumber(1200), ShouldEqual, 51)
+	})
+}

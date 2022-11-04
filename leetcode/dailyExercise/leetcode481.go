@@ -46,7 +46,7 @@ package dailyExercise
 
 //leetcode submit region begin(Prohibit modification and deletion)
 func magicalString(n int) int {
-
+	return 0
 }
 
 //leetcode submit region end(Prohibit modification and deletion)
