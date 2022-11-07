@@ -394,3 +394,10 @@ func Test754(t *testing.T) {
 		So(reachNumber(1200), ShouldEqual, 51)
 	})
 }
+
+func Test816(t *testing.T) {
+	Convey("模糊坐标", t, func() {
+		So(ambiguousCoordinates("(00011)"), ShouldResemble, []string{"(0, 0.011)", "(0.001, 1)"})
+		So(len(ambiguousCoordinates("(0123)")), ShouldEqual, 6)
+	})
+}
