@@ -401,3 +401,9 @@ func Test816(t *testing.T) {
 		So(len(ambiguousCoordinates("(0123)")), ShouldEqual, 6)
 	})
 }
+
+func Test764(t *testing.T) {
+	Convey("最大加号标志", t, func() {
+		So(orderOfLargestPlusSign(5, [][]int{{4, 2}}), ShouldEqual, 2)
+	})
+}
