@@ -50,31 +50,79 @@ func HttpserverPie(w http.ResponseWriter, _ *http.Request) {
 
 	// Put data into instance
 	var params []opts.PieData
-	for i := 0; i < 4; i++ {
-		params = append(params, opts.PieData{
-			Name:     fmt.Sprintf("kaifeng.dong%d", i),
-			Value:    i*i + 1,
-			Selected: i%2 == 0,
-			Label: &opts.Label{
-				Show:     true,
-				Color:    "auto",
-				Position: "top",
+
+	params = append(params, opts.PieData{
+		Name:     fmt.Sprintf("Location CC"),
+		Value:    16436,
+		Selected: true,
+		Label: &opts.Label{
+			Show:     true,
+			Color:    "auto",
+			Position: "top",
+		},
+		ItemStyle: &opts.ItemStyle{
+			Color:       "orange",
+			BorderColor: "auto",
+		},
+		Tooltip: &opts.Tooltip{
+			Show:      true,
+			Trigger:   "item",
+			TriggerOn: "mousemove|click",
+			Formatter: "{c}",
+			AxisPointer: &opts.AxisPointer{
+				Snap: true,
 			},
-			ItemStyle: &opts.ItemStyle{
-				Color:       "auto",
-				BorderColor: "auto",
+		},
+	})
+
+	params = append(params, opts.PieData{
+		Name:     fmt.Sprintf("SKU CC"),
+		Value:    12932,
+		Selected: false,
+		Label: &opts.Label{
+			Show:     true,
+			Color:    "auto",
+			Position: "top",
+		},
+		ItemStyle: &opts.ItemStyle{
+			Color:       "grey",
+			BorderColor: "auto",
+		},
+		Tooltip: &opts.Tooltip{
+			Show:      true,
+			Trigger:   "item",
+			TriggerOn: "mousemove|click",
+			Formatter: "{c}",
+			AxisPointer: &opts.AxisPointer{
+				Snap: true,
 			},
-			Tooltip: &opts.Tooltip{
-				Show:      true,
-				Trigger:   "item",
-				TriggerOn: "mousemove|click",
-				Formatter: "{c}",
-				AxisPointer: &opts.AxisPointer{
-					Snap: true,
-				},
+		},
+	})
+
+	params = append(params, opts.PieData{
+		Name:     fmt.Sprintf("Movement CC"),
+		Value:    1674,
+		Selected: false,
+		Label: &opts.Label{
+			Show:     true,
+			Color:    "auto",
+			Position: "top",
+		},
+		ItemStyle: &opts.ItemStyle{
+			Color:       "green",
+			BorderColor: "auto",
+		},
+		Tooltip: &opts.Tooltip{
+			Show:      true,
+			Trigger:   "item",
+			TriggerOn: "mousemove|click",
+			Formatter: "{c}",
+			AxisPointer: &opts.AxisPointer{
+				Snap: true,
 			},
-		})
-	}
+		},
+	})
+
 	pie.AddSeries("test pie", params)
 	pie.Render(w)
 }

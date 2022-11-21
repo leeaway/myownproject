@@ -113,6 +113,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[805]数组的均值分割.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[805]数组的均值分割.md" />
+              <option name="frontendQuestionId" value="leetcode.cn805" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[805]数组的均值分割.go" />
+              <option name="titleSlug" value="split-array-with-same-average" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[808]分汤.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[808]分汤.md" />
+              <option name="frontendQuestionId" value="leetcode.cn808" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[808]分汤.go" />
+              <option name="titleSlug" value="soup-servings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[816]模糊坐标.go">
           <value>
             <LeetcodeEditor>
@@ -143,6 +165,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[862]和至少为 K 的最短子数组.go" />
               <option name="titleSlug" value="shortest-subarray-with-sum-at-least-k" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[864]获取所有钥匙的最短路径.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[864]获取所有钥匙的最短路径.md" />
+              <option name="frontendQuestionId" value="leetcode.cn864" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[864]获取所有钥匙的最短路径.go" />
+              <option name="titleSlug" value="shortest-path-to-get-all-keys" />
             </LeetcodeEditor>
           </value>
         </entry>

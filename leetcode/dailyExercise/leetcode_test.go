@@ -407,3 +407,12 @@ func Test764(t *testing.T) {
 		So(orderOfLargestPlusSign(5, [][]int{{4, 2}}), ShouldEqual, 2)
 	})
 }
+
+func Test_808(t *testing.T) {
+	Convey("808", t, func() {
+		Convey("808 test1", func() {
+			So(soupServings(50), ShouldEqual, 0.62500)
+			So(soupServings(100), ShouldEqual, 0.71875)
+		})
+	})
+}
