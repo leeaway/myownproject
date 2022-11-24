@@ -311,3 +311,29 @@ func Test_25(t *testing.T) {
 		})
 	})
 }
+
+func Test_29(t *testing.T) {
+	Convey("spiralOrder", t, func() {
+		Convey("n*n螺旋矩阵 test1", func() {
+			matrix := [][]int{
+				{1, 2, 3, 4},
+				{5, 6, 7, 8},
+				{9, 10, 11, 12},
+			}
+			So(spiralOrder(matrix), ShouldResemble, []int{1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7})
+		})
+
+		Convey("m*n螺旋矩阵", func() {
+			matrix := [][]int{
+				{1, 2, 3, 4, 5},
+				{6, 7, 8, 9, 10},
+			}
+			So(spiralOrder(matrix), ShouldResemble, []int{1, 2, 3, 4, 5, 10, 9, 8, 7, 6})
+		})
+
+		Convey("空矩阵", func() {
+			matrix := [][]int{}
+			So(spiralOrder(matrix), ShouldResemble, []int{})
+		})
+	})
+}
