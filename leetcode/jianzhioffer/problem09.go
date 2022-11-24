@@ -1,5 +1,7 @@
 package jianzhioffer
 
+import "example.com/m/v2/tools/collections"
+
 /**
  * @author 2416144794@qq.com
  * @date 2022/10/12 17:44
@@ -43,18 +45,18 @@ package jianzhioffer
 */
 
 type CQueue struct {
-	inStack, outStack *Stack
+	inStack, outStack *collections.Stack
 }
 
 func Constructor() CQueue {
 	return CQueue{
-		inStack:  NewStack(),
-		outStack: NewStack(),
+		inStack:  collections.NewStack(),
+		outStack: collections.NewStack(),
 	}
 }
 
 func (this *CQueue) AppendTail(value int) {
-	this.inStack.Offer(value)
+	this.inStack.Push(value)
 }
 
 func (this *CQueue) DeleteHead() int {
@@ -62,34 +64,9 @@ func (this *CQueue) DeleteHead() int {
 		return this.outStack.Poll()
 	}
 	for !this.inStack.IsEmpty() {
-		this.outStack.Offer(this.inStack.Poll())
+		this.outStack.Push(this.inStack.Poll())
 	}
 	return this.outStack.Poll()
-}
-
-type Stack struct {
-	nums []int
-}
-
-func NewStack() *Stack {
-	return &Stack{nums: []int{}}
-}
-
-func (s *Stack) IsEmpty() bool {
-	return len(s.nums) == 0
-}
-
-func (s *Stack) Offer(a int) {
-	s.nums = append(s.nums, a)
-}
-
-func (s *Stack) Poll() int {
-	if s.IsEmpty() {
-		return -1
-	}
-	res := s.nums[len(s.nums)-1]
-	s.nums = s.nums[:len(s.nums)-1]
-	return res
 }
 
 /**
