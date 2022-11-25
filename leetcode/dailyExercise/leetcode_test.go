@@ -416,3 +416,24 @@ func Test_808(t *testing.T) {
 		})
 	})
 }
+
+func Test_809(t *testing.T) {
+	Convey("情感丰富的文字", t, func() {
+		Convey("buildWordFormat test1", func() {
+			item := buildWordFormat("helloooolloo")
+			So(showWordItem(item), ShouldEqual, "h1e1l2o4l2o2")
+		})
+
+		Convey("isExpressive test", func() {
+			item1 := buildWordFormat("heeeellooo")
+			item2 := buildWordFormat("helo")
+			item3 := buildWordFormat("hello")
+			So(isExpressive(item1, item2), ShouldEqual, false)
+			So(isExpressive(item1, item3), ShouldEqual, true)
+		})
+
+		Convey("情感丰富的文字", func() {
+			So(expressiveWords("heeellooo", []string{"hello", "hi", "helo"}), ShouldEqual, 1)
+		})
+	})
+}

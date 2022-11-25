@@ -1,4 +1,6 @@
-package jianzhioffer
+package problem1_9
+
+import "example.com/m/v2/tools/collections"
 
 /**
  * @author 2416144794@qq.com
@@ -22,25 +24,11 @@ package jianzhioffer
 //
 // Related Topics 栈 递归 链表 双指针 👍 342 👎 0
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func (l *ListNode) Show() []int {
-	var res []int
-	for l != nil {
-		res = append(res, l.Val)
-		l = l.Next
-	}
-	return res
-}
-
 /*
 方法一：迭代
 	每次append到头部即可
 */
-func reversePrint1(head *ListNode) []int {
+func reversePrint1(head *collections.ListNode) []int {
 	var res []int
 	for head != nil {
 		res = append([]int{head.Val}, res...)
@@ -53,7 +41,7 @@ func reversePrint1(head *ListNode) []int {
  方法一的递归写法
 */
 
-func reversePrint1_recurse(head *ListNode) []int {
+func reversePrint1_recurse(head *collections.ListNode) []int {
 	var res []int
 	if head == nil {
 		return res
@@ -66,11 +54,11 @@ func reversePrint1_recurse(head *ListNode) []int {
 	递归
 */
 
-func reversePrint2(head *ListNode) []int {
+func reversePrint2(head *collections.ListNode) []int {
 	return reversePrint2helper(head, []int{})
 }
 
-func reversePrint2helper(head *ListNode, res []int) []int {
+func reversePrint2helper(head *collections.ListNode, res []int) []int {
 	if head == nil {
 		return res
 	}

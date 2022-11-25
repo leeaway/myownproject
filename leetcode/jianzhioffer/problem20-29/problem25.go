@@ -1,4 +1,8 @@
-package jianzhioffer
+package problem20_29
+
+import (
+	"example.com/m/v2/tools/collections"
+)
 
 /**
  * @author 2416144794@qq.com
@@ -30,8 +34,8 @@ package jianzhioffer
  */
 
 // 迭代做法，简单模拟即可
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	res := &ListNode{}
+func mergeTwoLists(l1 *collections.ListNode, l2 *collections.ListNode) *collections.ListNode {
+	res := &collections.ListNode{}
 	p, q, head := l1, l2, res
 	for p != nil && q != nil {
 		if p.Val <= q.Val {
@@ -59,7 +63,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 
 然后就很简单了，l1的后续结点不就是l1.Next和l2的合并吗？直接递归！返回l1，完事！,反之，换成l2即可
 */
-func mergeTwoLists2(l1 *ListNode, l2 *ListNode) *ListNode {
+func mergeTwoLists2(l1 *collections.ListNode, l2 *collections.ListNode) *collections.ListNode {
 	if l1 == nil {
 		return l2
 	}

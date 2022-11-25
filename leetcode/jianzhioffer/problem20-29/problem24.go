@@ -1,4 +1,8 @@
-package jianzhioffer
+package problem20_29
+
+import (
+	"example.com/m/v2/tools/collections"
+)
 
 /**
  * @author 2416144794@qq.com
@@ -28,18 +32,18 @@ package jianzhioffer
 
 /**
  * Definition for singly-linked list.
- * type ListNode struct {
+ * type collections.ListNode struct {
  *     Val int
- *     Next *ListNode
+ *     Next *collections.ListNode
  * }
  */
 
 // 图上画一画，即可，cur表示当前节点，pre为前置节点（初始为nil），再用tmp保存cur.Next即可，cur指向pre，然后前进到tmp
-func reverseList(head *ListNode) *ListNode {
+func reverseList(head *collections.ListNode) *collections.ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
-	var pre *ListNode
+	var pre *collections.ListNode
 	cur := head
 	for cur != nil {
 		tmp := cur.Next

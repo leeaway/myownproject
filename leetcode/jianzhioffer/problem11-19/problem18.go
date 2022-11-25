@@ -1,4 +1,6 @@
-package jianzhioffer
+package problem11_19
+
+import "example.com/m/v2/tools/collections"
 
 /**
  * @author 2416144794@qq.com
@@ -40,7 +42,7 @@ package jianzhioffer
 方法：本质上就是把上一个节点直接指向val对应节点的next节点
 因此只需记录pre节点即可
 */
-func deleteNode(head *ListNode, val int) *ListNode {
+func deleteNode(head *collections.ListNode, val int) *collections.ListNode {
 	dummy := head
 	if head.Val == val {
 		return head.Next

@@ -1,4 +1,6 @@
-package jianzhioffer
+package problem20_29
+
+import "example.com/m/v2/tools/collections"
 
 /**
  * @author 2416144794@qq.com
@@ -35,15 +37,15 @@ package jianzhioffer
 //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for a binary tree node.
- * type TreeNode struct {
+ * type collections.TreeNode struct {
  *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
+ *     Left *collections.TreeNode
+ *     Right *collections.TreeNode
  * }
  */
 
 //判断是否是子结构
-func isSubStructure(A *TreeNode, B *TreeNode) bool {
+func isSubStructure(A *collections.TreeNode, B *collections.TreeNode) bool {
 	if A == nil || B == nil {
 		return false
 	}
@@ -54,7 +56,7 @@ func isSubStructure(A *TreeNode, B *TreeNode) bool {
 }
 
 //判断是否包含
-func isContain(A *TreeNode, B *TreeNode) bool {
+func isContain(A *collections.TreeNode, B *collections.TreeNode) bool {
 	if B == nil {
 		return true
 	}

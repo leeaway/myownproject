@@ -1,4 +1,6 @@
-package jianzhioffer
+package problem20_29
+
+import "example.com/m/v2/tools/collections"
 
 /**
  * @author 2416144794@qq.com
@@ -34,15 +36,15 @@ package jianzhioffer
 //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for a binary tree node.
- * type TreeNode struct {
+ * type collections.TreeNode struct {
  *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
+ *     Left *collections.TreeNode
+ *     Right *collections.TreeNode
  * }
  */
 
 // 本质上就是左右子树互换，注意要先保存副本
-func mirrorTree(root *TreeNode) *TreeNode {
+func mirrorTree(root *collections.TreeNode) *collections.TreeNode {
 	if root == nil {
 		return root
 	}

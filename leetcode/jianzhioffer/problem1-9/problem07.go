@@ -1,4 +1,6 @@
-package jianzhioffer
+package problem1_9
+
+import "example.com/m/v2/tools/collections"
 
 /**
  * @author 2416144794@qq.com
@@ -38,12 +40,6 @@ package jianzhioffer
 //
 // Related Topics 树 数组 哈希表 分治 二叉树 👍 917 👎 0
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 /*
 方法：preorder中第一个记为根节点，然后找到inorder中的根节点的位置，左边记为左子树，右边即为右子树
 	如：Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
@@ -52,11 +48,11 @@ type TreeNode struct {
 		len(pre) == 0
 */
 
-func buildTree(preorder []int, inorder []int) *TreeNode {
+func buildTree(preorder []int, inorder []int) *collections.TreeNode {
 	if len(preorder) == 0 {
 		return nil
 	}
-	root := &TreeNode{
+	root := &collections.TreeNode{
 		Val: preorder[0],
 	}
 	inMap := valToIndexMap(inorder)
@@ -77,7 +73,7 @@ func valToIndexMap(nums []int) map[int]int {
 	return res
 }
 
-func preOrder(root *TreeNode, res []int) []int {
+func preOrder(root *collections.TreeNode, res []int) []int {
 	if root == nil {
 		return res
 	}
@@ -87,7 +83,7 @@ func preOrder(root *TreeNode, res []int) []int {
 	return res
 }
 
-func inOrder(root *TreeNode, res []int) []int {
+func inOrder(root *collections.TreeNode, res []int) []int {
 	if root == nil {
 		return res
 	}

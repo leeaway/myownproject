@@ -1,4 +1,6 @@
-package jianzhioffer
+package problem20_29
+
+import "example.com/m/v2/leetcode/jianzhioffer"
 
 /**
  * @author 2416144794@qq.com
@@ -28,7 +30,7 @@ package jianzhioffer
  * }
  */
 //快慢指针，让fast先走k步，slow再出发，等fast到底后slow在的位置就是倒数第k个
-func getKthFromEnd(head *ListNode, k int) *ListNode {
+func getKthFromEnd(head *jianzhioffer.ListNode, k int) *jianzhioffer.ListNode {
 	slow, fast := head, head
 	cnt := 0
 	for fast != nil {

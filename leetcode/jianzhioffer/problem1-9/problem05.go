@@ -1,4 +1,4 @@
-package jianzhioffer
+package problem1_9
 
 import "strings"
 
