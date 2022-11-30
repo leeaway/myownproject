@@ -39,3 +39,15 @@ func Test_31(t *testing.T) {
 		})
 	})
 }
+
+func Test_33(t *testing.T) {
+	Convey("是否是二叉搜索树的后序遍历", t, func() {
+		Convey("33 test1", func() {
+			So(verifyPostorder([]int{1, 3, 2, 6, 5}), ShouldEqual, true)
+			So(verifyPostorder([]int{1, 3, 2, 5, 6}), ShouldEqual, true)
+			So(verifyPostorder([]int{1, 6, 3, 2, 5}), ShouldEqual, false)
+			So(verifyPostorder([]int{7, 4, 6, 5}), ShouldEqual, false)
+
+		})
+	})
+}

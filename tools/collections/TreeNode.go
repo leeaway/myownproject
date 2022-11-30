@@ -10,3 +10,7 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
+func (t *TreeNode) IsLeaf() bool {
+	return t != nil && t.Left == nil && t.Right == nil
+}

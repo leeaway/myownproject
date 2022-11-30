@@ -18,3 +18,17 @@ func (l *ListNode) Show() []int {
 	}
 	return res
 }
+
+func NewListNode(val int) *ListNode {
+	return &ListNode{Val: val}
+}
+
+func NewListNodeByArray(nodesVal []int) *ListNode {
+	res := &ListNode{}
+	dummy := res
+	for _, nodeVal := range nodesVal {
+		dummy.Next = NewListNode(nodeVal)
+		dummy = dummy.Next
+	}
+	return res.Next
+}

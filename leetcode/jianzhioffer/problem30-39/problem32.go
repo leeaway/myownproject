@@ -44,8 +44,30 @@ import "example.com/m/v2/tools/collections"
  *     Right *TreeNode
  * }
  */
+
+/*
+	典型的广度优先搜索，实现层序遍历
+*/
 func levelOrder(root *collections.TreeNode) []int {
-	return nil
+	var res []int
+	if root == nil {
+		return res
+	}
+	que := []*collections.TreeNode{root}
+	res = append(res, root.Val)
+	for len(que) > 0 {
+		top := que[0]
+		que = que[1:]
+		if top.Left != nil {
+			que = append(que, top.Left)
+			res = append(res, top.Left.Val)
+		}
+		if top.Right != nil {
+			que = append(que, top.Right)
+			res = append(res, top.Right.Val)
+		}
+	}
+	return res
 }
 
 //leetcode submit region end(Prohibit modification and deletion)
