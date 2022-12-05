@@ -125,3 +125,45 @@ func Test_isPalindrome(t *testing.T) {
 		})
 	})
 }
+
+func Test_reverseKGroup(t *testing.T) {
+	Convey("reverseKGroup", t, func() {
+		Convey("reverseBetween test1", func() {
+			node6 := &collections.ListNode{
+				Val:  6,
+				Next: nil,
+			}
+			node5 := &collections.ListNode{
+				Val:  5,
+				Next: node6,
+			}
+			node4 := &collections.ListNode{
+				Val:  4,
+				Next: node5,
+			}
+			node3 := &collections.ListNode{
+				Val:  3,
+				Next: node4,
+			}
+
+			node2 := &collections.ListNode{
+				Val:  2,
+				Next: node3,
+			}
+
+			head1 := &collections.ListNode{
+				Val:  1,
+				Next: node2,
+			}
+			So(reverseBetween(head1, node6).Show(), ShouldResemble, []int{5, 4, 3, 2, 1})
+		})
+
+		Convey("reverse K group", func() {
+			head1 := collections.NewListNodeByArray([]int{1, 2, 3, 4, 5, 6})
+			So(reverseKGroup(head1, 2).Show(), ShouldResemble, []int{2, 1, 4, 3, 6, 5})
+
+			head2 := collections.NewListNodeByArray([]int{1, 2, 3, 4, 5, 6, 7, 8})
+			So(reverseKGroup(head2, 3).Show(), ShouldResemble, []int{3, 2, 1, 6, 5, 4, 7, 8})
+		})
+	})
+}
