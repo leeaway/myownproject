@@ -36,6 +36,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1687]从仓库到码头运输箱子.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[1687]从仓库到码头运输箱子.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1687" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1687]从仓库到码头运输箱子.go" />
+              <option name="titleSlug" value="delivering-boxes-from-storage-to-ports" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1700]无法吃午餐的学生数量.go">
           <value>
             <LeetcodeEditor>
@@ -58,6 +69,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1775]通过最少操作次数使数组的和相等.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[1775]通过最少操作次数使数组的和相等.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1775" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1775]通过最少操作次数使数组的和相等.go" />
+              <option name="titleSlug" value="equal-sum-arrays-with-minimum-number-of-operations" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1790]仅执行一次字符串交换能否使两个字符串相等.go">
           <value>
             <LeetcodeEditor>
@@ -77,6 +99,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[1822]数组元素积的符号.go" />
               <option name="titleSlug" value="sign-of-the-product-of-an-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[22]括号生成.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[22]括号生成.md" />
+              <option name="frontendQuestionId" value="leetcode.cn22" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[22]括号生成.go" />
+              <option name="titleSlug" value="generate-parentheses" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -748,6 +781,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[剑指 Offer 37]序列化二叉树.go" />
               <option name="titleSlug" value="xu-lie-hua-er-cha-shu-lcof" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[剑指 Offer 47]礼物的最大价值.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/doc/content/[剑指 Offer 47]礼物的最大价值.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 47" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/cx/2qnvwl7j0tlgxf5gv0gk3my80000gy/T/leetcode/editor/cn/[剑指 Offer 47]礼物的最大价值.go" />
+              <option name="titleSlug" value="li-wu-de-zui-da-jie-zhi-lcof" />
             </LeetcodeEditor>
           </value>
         </entry>
