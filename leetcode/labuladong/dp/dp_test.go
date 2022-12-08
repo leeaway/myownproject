@@ -36,5 +36,29 @@ func Test_MinDistance(t *testing.T) {
 			So(minDistance("horse", "ros"), ShouldEqual, 3)
 			So(minDistance("intention", "execution"), ShouldEqual, 5)
 		})
+
+		//递归做法
+		Convey("MinDistance2 test1", func() {
+			So(minDistance2("abcde", "kde"), ShouldEqual, 3)
+			So(minDistance2("horse", "ros"), ShouldEqual, 3)
+			So(minDistance2("intention", "execution"), ShouldEqual, 5)
+		})
+
+		//记忆化递归
+		Convey("MinDistance3 test1", func() {
+			So(minDistance3("abcde", "kde"), ShouldEqual, 3)
+			So(minDistance3("horse", "ros"), ShouldEqual, 3)
+			So(minDistance3("intention", "execution"), ShouldEqual, 5)
+		})
+	})
+}
+
+func Test_LongestCommonSubString(t *testing.T) {
+	Convey("LongestCommonSubString", t, func() {
+		Convey("LongestCommonSubString test1", func() {
+			So(longestCommonSubsequence("abcde", "ace"), ShouldEqual, 3)
+			So(longestCommonSubsequence("abcde", "ce"), ShouldEqual, 2)
+			So(longestCommonSubsequence("abcde", "fg"), ShouldEqual, 0)
+		})
 	})
 }

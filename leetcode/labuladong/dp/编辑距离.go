@@ -1,6 +1,9 @@
 package dp
 
-import "example.com/m/v2/tools/mathutil"
+import (
+	"example.com/m/v2/tools/mathutil"
+	"fmt"
+)
 
 /**
  * @author 2416144794@qq.com
@@ -93,6 +96,64 @@ func minDistance(word1 string, word2 string) int {
 		}
 	}
 	return dp[m][n]
+}
+
+/*
+方法二：其实本质上是可以递归的
+*/
+
+func minDistance2(word1 string, word2 string) int {
+	m, n := len(word1), len(word2)
+	if m == 0 || n == 0 {
+		return m + n
+	}
+	if word1[0] == word2[0] {
+		return minDistance2(word1[1:], word2[1:])
+	}
+	add := minDistance2(word1[1:], word2) + 1
+	del := minDistance2(word1, word2[1:]) + 1
+	rep := minDistance2(word1[1:], word2[1:]) + 1
+	return mathutil.MinInt(add, mathutil.MinInt(del, rep))
+}
+
+/*
+	显然上面的递归解法有很多的重复子问题，可能会超时，我们尝试加上备忘录
+	本质上记录两个指针，以两个指针作key即可
+*/
+
+func minDistance3(word1 string, word2 string) int {
+	m, n := len(word1), len(word2)
+	if m == 0 || n == 0 {
+		return m + n
+	}
+	memo := make(map[string]int)
+	return minDistanceHelper(word1, word2, 0, 0, memo)
+}
+
+func buildKeyStr(i, j int) string {
+	return fmt.Sprintf("%d:%d", i, j)
+}
+
+func minDistanceHelper(word1 string, word2 string, p1, p2 int, memo map[string]int) int {
+	val, ok := memo[buildKeyStr(p1, p2)]
+	if ok {
+		return val
+	}
+
+	m, n := len(word1), len(word2)
+	if m == p1 || n == p2 {
+		return m + n - (p1 + p2)
+	}
+
+	if word1[p1] == word2[p2] {
+		memo[buildKeyStr(p1, p2)] = minDistanceHelper(word1, word2, p1+1, p2+1, memo)
+	} else {
+		add := minDistanceHelper(word1, word2, p1+1, p2, memo) + 1
+		del := minDistanceHelper(word1, word2, p1, p2+1, memo) + 1
+		rep := minDistanceHelper(word1, word2, p1+1, p2+1, memo) + 1
+		memo[buildKeyStr(p1, p2)] = mathutil.MinInt(add, mathutil.MinInt(del, rep))
+	}
+	return memo[buildKeyStr(p1, p2)]
 }
 
 //leetcode submit region end(Prohibit modification and deletion)
