@@ -62,3 +62,41 @@ func Test_LongestCommonSubString(t *testing.T) {
 		})
 	})
 }
+
+func Test_CanPartition(t *testing.T) {
+	Convey("CanPartition", t, func() {
+		Convey("CanPartition test1", func() {
+			So(canPartition([]int{1, 2, 3, 5}), ShouldEqual, false)
+			So(canPartition([]int{1, 5, 11, 5}), ShouldEqual, true)
+		})
+	})
+}
+
+func Test_FindTargetSumWays(t *testing.T) {
+	Convey("FindTargetSumWays", t, func() {
+		Convey("FindTargetSumWays test1", func() {
+			So(findTargetSumWays([]int{0, 0, 0}, 0), ShouldEqual, 8)
+			So(findTargetSumWays([]int{0, 1, 2}, 1), ShouldEqual, 2)
+			So(findTargetSumWays([]int{1, 1, 1, 1, 1}, 3), ShouldEqual, 5)
+			So(findTargetSumWays([]int{0, 0, 0, 0, 1}, 1), ShouldEqual, 16)
+		})
+	})
+}
+
+func Test_FindMaxForm(t *testing.T) {
+	Convey("FindMaxForm", t, func() {
+		Convey("FindMaxForm test1", func() {
+			So(findMaxForm([]string{"10", "0001", "111001", "1", "0"}, 5, 3), ShouldEqual, 4)
+		})
+	})
+}
+
+func Test_LastStoneWeightII(t *testing.T) {
+	Convey("LastStoneWeightII", t, func() {
+		Convey("LastStoneWeightII test1", func() {
+			So(lastStoneWeightII([]int{14, 1, 7, 17, 8, 10}), ShouldEqual, 1)
+			So(lastStoneWeightII([]int{2, 7, 4, 1, 8, 1}), ShouldEqual, 1)
+			So(lastStoneWeightII([]int{31, 26, 33, 21, 40}), ShouldEqual, 5)
+		})
+	})
+}
