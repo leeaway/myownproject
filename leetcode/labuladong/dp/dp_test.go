@@ -100,3 +100,25 @@ func Test_LastStoneWeightII(t *testing.T) {
 		})
 	})
 }
+
+func Test_CalculateMinimumHP(t *testing.T) {
+	Convey("CalculateMinimumHP", t, func() {
+		Convey("CalculateMinimumHP test1", func() {
+			dungeon1 := [][]int{
+				{-2, -3, 3},
+				{-5, -10, 1},
+				{10, 30, -5},
+			}
+			So(calculateMinimumHP(dungeon1), ShouldEqual, 7)
+			dungeon2 := [][]int{
+				{1, 2, 3},
+			}
+			So(calculateMinimumHP(dungeon2), ShouldEqual, 1)
+
+			dungeon3 := [][]int{
+				{1, -5, 3},
+			}
+			So(calculateMinimumHP(dungeon3), ShouldEqual, 5)
+		})
+	})
+}
