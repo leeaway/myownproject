@@ -437,3 +437,12 @@ func Test_809(t *testing.T) {
 		})
 	})
 }
+
+func Test_BeautySum(t *testing.T) {
+	Convey("BeautySum", t, func() {
+		Convey("BeautySum test1", func() {
+			So(beautySum("aabcb"), ShouldEqual, 5)
+			So(beautySum("aabcbaa"), ShouldEqual, 17)
+		})
+	})
+}
