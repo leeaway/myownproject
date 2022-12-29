@@ -34,3 +34,7 @@ func (u *UnionFind) Union(x, y int) {
 	}
 	u.Parent[px] = py
 }
+
+func (u *UnionFind) IsConn(x, y int) bool {
+	return u.Find(x) == u.Find(y)
+}
