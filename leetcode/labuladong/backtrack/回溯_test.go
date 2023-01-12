@@ -18,12 +18,13 @@ func Test_GenerateParenthesis(t *testing.T) {
 			fmt.Println(generateParenthesis(3))
 			fmt.Println(generateParenthesis(4))
 		})
+	})
+}
 
-		Convey("GenerateParenthesis2 test1", func() {
-			fmt.Println(generateParenthesis2(1))
-			fmt.Println(generateParenthesis2(3))
-			fmt.Println(generateParenthesis2(4))
+func Test_SolveNQueen(t *testing.T) {
+	Convey("SolveNQueen", t, func() {
+		Convey("SolveNQueen test1", func() {
+			fmt.Println(solveNQueens(4))
 		})
-
 	})
 }

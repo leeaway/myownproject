@@ -122,3 +122,35 @@ func Test_CalculateMinimumHP(t *testing.T) {
 		})
 	})
 }
+
+func Test_ThrowEgg(t *testing.T) {
+	Convey("ThrowEgg", t, func() {
+		Convey("ThrowEgg test1,递归做法", func() {
+			So(MinNumberOfThrowEgg(2, 10), ShouldEqual, 4)
+			So(MinNumberOfThrowEgg(2, 100), ShouldEqual, 14)
+			So(MinNumberOfThrowEgg(3, 14), ShouldEqual, 4)
+		})
+
+		Convey("ThrowEgg test2,动态规划做法", func() {
+			So(MinNumberOfThrowEgg2(2, 7), ShouldEqual, 4)
+			So(MinNumberOfThrowEgg2(2, 100), ShouldEqual, 14)
+			So(MinNumberOfThrowEgg2(3, 14), ShouldEqual, 4)
+		})
+
+		Convey("ThrowEgg test3,动态规划做法,时间复杂度更低", func() {
+			So(MinNumberOfThrowEgg3(2, 7), ShouldEqual, 4)
+			So(MinNumberOfThrowEgg3(2, 100), ShouldEqual, 14)
+			So(MinNumberOfThrowEgg3(3, 14), ShouldEqual, 4)
+		})
+	})
+}
+
+func Test_maxUncrossedLines(t *testing.T) {
+	Convey("maxUncrossedLines", t, func() {
+		Convey("maxUncrossedLines test1", func() {
+			So(maxUncrossedLines([]int{1, 2, 4}, []int{1, 4, 2}), ShouldEqual, 2)
+			So(maxUncrossedLines([]int{2, 5, 1, 2, 5}, []int{10, 5, 2, 1, 5, 2}), ShouldEqual, 3)
+			So(maxUncrossedLines([]int{3, 3}, []int{3}), ShouldEqual, 1)
+		})
+	})
+}
