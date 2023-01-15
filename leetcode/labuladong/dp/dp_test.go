@@ -154,3 +154,11 @@ func Test_maxUncrossedLines(t *testing.T) {
 		})
 	})
 }
+
+func Test_minimumDistance(t *testing.T) {
+	Convey("minimumDistance", t, func() {
+		Convey("minimumDistance test1", func() {
+			So(minimumDistance("CAKE"), ShouldEqual, 3)
+		})
+	})
+}

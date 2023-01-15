@@ -1,22 +1,9 @@
 package collections
 
-var aInt = int('a')
-
 type TrieTreeNode struct {
-	Content  int
 	Children [26]*TrieTreeNode
-}
-
-func (n *TrieTreeNode) IsLeaf() bool {
-	if n == nil {
-		return false
-	}
-	for _, node := range n.Children {
-		if node != nil {
-			return false
-		}
-	}
-	return true
+	//表示是否是结尾，部分节点可能既是结尾，又不是，如abc、abcd的c节点
+	IsFinished bool
 }
 
 func (n *TrieTreeNode) GetChildrenNum() int {
@@ -32,8 +19,8 @@ func (n *TrieTreeNode) GetChildrenNum() int {
 	return res
 }
 
-func newTrieTreeNode(content int) *TrieTreeNode {
-	return &TrieTreeNode{Content: content}
+func newTrieTreeNode() *TrieTreeNode {
+	return &TrieTreeNode{}
 }
 
 type TrieTree struct {
@@ -42,7 +29,7 @@ type TrieTree struct {
 
 func newTrieTree() *TrieTree {
 	return &TrieTree{
-		Root: &TrieTreeNode{},
+		Root: newTrieTreeNode(),
 	}
 }
 
@@ -56,14 +43,20 @@ func CreateTrieTree(words []string) *TrieTree {
 
 func (t *TrieTree) AddWord(word string) {
 	temp := t.Root
-	for _, w := range word {
-		if temp.Children[int(w)-aInt] != nil {
-			temp = temp.Children[int(w)-aInt]
+	for i, w := range word {
+		idx := int(w - 'a')
+		if temp.Children[idx] != nil {
+			temp = temp.Children[idx]
+			if i == len(word)-1 {
+				temp.IsFinished = true
+			}
 			continue
 		}
-		curNode := newTrieTreeNode(int(w))
-		temp.Children[int(w)-aInt] = curNode
-		temp = curNode
+		temp.Children[idx] = newTrieTreeNode()
+		temp = temp.Children[idx]
+		if i == len(word)-1 {
+			temp.IsFinished = true
+		}
 	}
 }
 
@@ -71,12 +64,13 @@ func (t *TrieTree) AddWord(word string) {
 func (t *TrieTree) FindWord(word string) bool {
 	temp := t.Root
 	for i, w := range word {
-		if temp.Children[int(w)-aInt] == nil {
+		idx := int(w - 'a')
+		if temp.Children[idx] == nil {
 			return false
 		}
-		temp = temp.Children[int(w)-aInt]
+		temp = temp.Children[idx]
 		if i == len(word)-1 {
-			return true
+			return temp.IsFinished
 		}
 	}
 	return false
@@ -86,10 +80,11 @@ func (t *TrieTree) FindWord(word string) bool {
 func (t *TrieTree) FuzzyFindWord(word string) bool {
 	temp := t.Root
 	for _, w := range word {
-		if temp.Children[int(w)-aInt] == nil {
+		idx := int(w - 'a')
+		if temp.Children[idx] == nil {
 			return false
 		}
-		temp = temp.Children[int(w)-aInt]
+		temp = temp.Children[idx]
 	}
 	return true
 }

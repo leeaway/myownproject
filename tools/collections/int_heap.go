@@ -5,67 +5,66 @@ package collections
  * @date 2022/12/6 14:31
  */
 
-//小根堆
-type IntMinHeap []int
-
-func (h *IntMinHeap) Less(i, j int) bool {
-	// h[i] > h[j]为大根堆
-	return (*h)[i] < (*h)[j]
+type IntHeap struct {
+	nums []int
+	//大根堆还是小跟堆，true为大根堆
+	isMaxHeap bool
 }
 
-func (h *IntMinHeap) Swap(i, j int) {
-	(*h)[i], (*h)[j] = (*h)[j], (*h)[i]
+func NewMaxIntHeap() *IntHeap {
+	return &IntHeap{
+		nums:      []int{},
+		isMaxHeap: true,
+	}
 }
 
-func (h *IntMinHeap) Len() int {
-	return len(*h)
+func NewMinIntHeap() *IntHeap {
+	return &IntHeap{
+		nums:      []int{},
+		isMaxHeap: false,
+	}
 }
 
-func (h *IntMinHeap) Pop() (v interface{}) {
-	*h, v = (*h)[:h.Len()-1], (*h)[h.Len()-1]
-	return
+func (h *IntHeap) Less(i, j int) bool {
+	if h.isMaxHeap {
+		// h[i] > h[j]为大根堆
+		return h.nums[i] > h.nums[j]
+	}
+	return h.nums[i] < h.nums[j]
 }
 
-func (h *IntMinHeap) Push(v interface{}) {
-	*h = append(*h, v.(int))
+func (h *IntHeap) Swap(i, j int) {
+	h.nums[i], h.nums[j] = h.nums[j], h.nums[i]
 }
 
-//大根堆
-type IntMaxHeap []int
-
-func (h *IntMaxHeap) Less(i, j int) bool {
-	// h[i] > h[j]为大根堆
-	return (*h)[i] < (*h)[j]
+func (h *IntHeap) Len() int {
+	return len(h.nums)
 }
 
-func (h *IntMaxHeap) Swap(i, j int) {
-	(*h)[i], (*h)[j] = (*h)[j], (*h)[i]
-}
-
-func (h *IntMaxHeap) Len() int {
-	return len(*h)
-}
-
-func (h *IntMaxHeap) Pop() (v interface{}) {
-	*h, v = (*h)[:h.Len()-1], (*h)[h.Len()-1]
-	return
-}
-
-func (h *IntMaxHeap) Push(v interface{}) {
-	*h = append(*h, v.(int))
-}
-
-func (h *IntMaxHeap) Size() int {
-	return len(*h)
-}
-
-func (h *IntMaxHeap) IsEmpty() bool {
-	return h.Size() == 0
-}
-
-func (h *IntMaxHeap) Peek() (v interface{}) {
+func (h *IntHeap) Pop() interface{} {
 	if h.IsEmpty() {
 		return -1
 	}
-	return (*h)[0]
+	top := h.nums[h.Len()-1]
+	h.nums = h.nums[:h.Len()-1]
+	return top
+}
+
+func (h *IntHeap) Push(v interface{}) {
+	h.nums = append(h.nums, v.(int))
+}
+
+func (h *IntHeap) Size() int {
+	return h.Len()
+}
+
+func (h *IntHeap) IsEmpty() bool {
+	return h.Size() == 0
+}
+
+func (h *IntHeap) Peek() (v interface{}) {
+	if h.IsEmpty() {
+		return -1
+	}
+	return h.nums[0]
 }
