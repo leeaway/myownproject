@@ -446,3 +446,18 @@ func Test_BeautySum(t *testing.T) {
 		})
 	})
 }
+
+func Test_countNicePairs(t *testing.T) {
+	Convey("Recv", t, func() {
+		Convey("Recv test1", func() {
+			So(recv(120), ShouldEqual, 21)
+			So(recv(1), ShouldEqual, 1)
+			So(recv(342356), ShouldEqual, 653243)
+		})
+
+		Convey("countNicePairs test", func() {
+			So(countNicePairs([]int{42, 11, 1, 97}), ShouldEqual, 2)
+			So(countNicePairs([]int{13, 10, 35, 24, 76}), ShouldEqual, 4)
+		})
+	})
+}

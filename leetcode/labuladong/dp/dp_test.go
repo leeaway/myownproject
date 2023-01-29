@@ -1,6 +1,7 @@
 package dp
 
 import (
+	"fmt"
 	. "github.com/smartystreets/goconvey/convey"
 	"testing"
 )
@@ -159,6 +160,14 @@ func Test_minimumDistance(t *testing.T) {
 	Convey("minimumDistance", t, func() {
 		Convey("minimumDistance test1", func() {
 			So(minimumDistance("CAKE"), ShouldEqual, 3)
+		})
+	})
+}
+
+func Test_dicesProbability(t *testing.T) {
+	Convey("dicesProbability", t, func() {
+		Convey("dicesProbability test1", func() {
+			fmt.Println(dicesProbability(4))
 		})
 	})
 }
