@@ -1,6 +1,7 @@
 package interview
 
 import (
+	"example.com/m/v2/interview/futu"
 	"fmt"
 	. "github.com/smartystreets/goconvey/convey"
 	"testing"
@@ -14,7 +15,7 @@ import (
 func Test_Solve(t *testing.T) {
 	Convey("Solve", t, func() {
 		Convey("Solve test1", func() {
-			res := solve([]int{0, 1})
+			res := futu.Solve([]int{0, 1})
 			fmt.Println(res)
 
 		})
@@ -24,7 +25,7 @@ func Test_Solve(t *testing.T) {
 func Test_ConcurrentPrint123(t *testing.T) {
 	Convey("ConcurrentPrint123", t, func() {
 		Convey("ConcurrentPrint123 test1", func() {
-			ConcurrentPrint123()
+			futu.ConcurrentPrint123()
 		})
 	})
 }

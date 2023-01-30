@@ -1,4 +1,4 @@
-package interview
+package futu
 
 /**
  * @author 2416144794@qq.com
@@ -7,7 +7,7 @@ package interview
 
 var res [][]int
 
-func solve(nums []int) [][]int {
+func Solve(nums []int) [][]int {
 	n := len(nums)
 	used := make([]bool, n)
 	solveHelper(nums, used, []int{})

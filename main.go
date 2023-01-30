@@ -2,28 +2,37 @@ package main
 
 import (
 	"example.com/m/v2/demo"
-	"example.com/m/v2/echart"
-	"example.com/m/v2/echart/examples"
 	"fmt"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"log"
 	"net/http"
+	_ "net/http/pprof"
 	"reflect"
+	"time"
 )
 
 func main() {
-	echart.EchartBar()
-	http.HandleFunc("/line", echart.Httpserver)
-	http.HandleFunc("/pie", echart.HttpserverPie)
-	http.HandleFunc("/bar3d", examples.Bar3dExamples{}.Examples)
-	http.HandleFunc("/geo", examples.GeoExamples{}.Examples)
-	http.HandleFunc("/gauge", examples.GaugeExamples{}.Examples)
-	http.HandleFunc("/tree", examples.TreeExamples{}.Examples)
-	http.HandleFunc("/graph", examples.GraphExamples{}.Examples)
-	http.HandleFunc("/map", examples.MapExamples{}.Examples)
-	http.HandleFunc("/center", examples.PageCenterLayoutExamples{}.Examples)
-	http.HandleFunc("/flex", examples.PageFlexLayoutExamples{}.Examples)
-	http.HandleFunc("/non", examples.PageNoneLayoutExamples{}.Examples)
+	//echart.EchartBar()
+	//http.HandleFunc("/line", echart.Httpserver)
+	//http.HandleFunc("/pie", echart.HttpserverPie)
+	//http.HandleFunc("/bar3d", examples.Bar3dExamples{}.Examples)
+	//http.HandleFunc("/geo", examples.GeoExamples{}.Examples)
+	//http.HandleFunc("/gauge", examples.GaugeExamples{}.Examples)
+	//http.HandleFunc("/tree", examples.TreeExamples{}.Examples)
+	//http.HandleFunc("/graph", examples.GraphExamples{}.Examples)
+	//http.HandleFunc("/map", examples.MapExamples{}.Examples)
+	//http.HandleFunc("/center", examples.PageCenterLayoutExamples{}.Examples)
+	//http.HandleFunc("/flex", examples.PageFlexLayoutExamples{}.Examples)
+	//http.HandleFunc("/non", examples.PageNoneLayoutExamples{}.Examples)
 
+	for i := 0; i < 4; i++ {
+		go func() {
+			for {
+				time.Sleep(200 * time.Millisecond)
+				log.Println("1")
+			}
+		}()
+	}
 	http.ListenAndServe(":8081", nil)
 }
 

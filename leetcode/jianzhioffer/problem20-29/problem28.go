@@ -1,5 +1,7 @@
 package problem20_29
 
+import "example.com/m/v2/tools/collections"
+
 /**
  * @author 2416144794@qq.com
  * @date 2022/11/23 20:36
@@ -45,14 +47,14 @@ package problem20_29
  *     Right *TreeNode
  * }
  */
-func isSymmetric(root *TreeNode) bool {
+func isSymmetric(root *collections.TreeNode) bool {
 	if root == nil {
 		return true
 	}
 	return checkSymmetric(root.Left, root.Right)
 }
 
-func checkSymmetric(A, B *TreeNode) bool {
+func checkSymmetric(A, B *collections.TreeNode) bool {
 	if A == nil || B == nil {
 		return A == nil && B == nil
 	}
