@@ -4,11 +4,8 @@ import (
 	"example.com/m/v2/demo"
 	"fmt"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"log"
-	"net/http"
 	_ "net/http/pprof"
 	"reflect"
-	"time"
 )
 
 func main() {
@@ -25,15 +22,11 @@ func main() {
 	//http.HandleFunc("/flex", examples.PageFlexLayoutExamples{}.Examples)
 	//http.HandleFunc("/non", examples.PageNoneLayoutExamples{}.Examples)
 
-	for i := 0; i < 4; i++ {
-		go func() {
-			for {
-				time.Sleep(200 * time.Millisecond)
-				log.Println("1")
-			}
-		}()
-	}
-	http.ListenAndServe(":8081", nil)
+	var a int
+	var b string
+	fmt.Println("please enter:")
+	fmt.Scanln(&a, &b)
+	fmt.Println(a, b)
 }
 
 func init() {
