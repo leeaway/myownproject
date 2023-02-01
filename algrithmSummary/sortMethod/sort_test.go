@@ -18,7 +18,8 @@ func TestSort(t *testing.T) {
 
 	//测试快速排序
 	Convey("Test Quick Sort", t, func() {
-		So(quickSort([]int{1, 2, 4, 9, 3, 5, 8, 7, 6}), ShouldResemble, []int{1, 2, 3, 4, 5, 6, 7, 8, 9})
-		So(quickSort([]int{1, 2, 4, 9, 3, 5, 8, 7, 6, 5, 4, 2, 3}), ShouldResemble, []int{1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 7, 8, 9})
+		nums := []int{1, 2, 4, 2, 9, 3, 5, 2, 8, 7, 6}
+		quickSort(nums)
+		So(nums, ShouldResemble, []int{1, 2, 2, 2, 3, 4, 5, 6, 7, 8, 9})
 	})
 }

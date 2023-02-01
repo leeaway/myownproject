@@ -12,28 +12,25 @@ package sortMethod
 		5，重复3，4，直到左指针超过右指针，此时，比基准小的值就都会放在基准的左边，比基准大的值会出现在基准的右边
 		6，然后分别对基准的左右两边重复以上的操作，直到数组完全排序
 */
-func quickSort(nums []int, start, end int) []int {
-	if len(nums) < 2 {
-		return nums
+
+func quickSort(arr []int) {
+	if len(arr) < 2 {
+		return
 	}
-	base := nums[0]
-	l, r := 0, len(nums)-1
+	base := arr[0]
+	l, r := 0, len(arr)-1
 	for l < r {
-		for l < r && nums[l] <= base {
-			l++
-		}
-		for r > l && nums[r] >= base {
+		for l < r && arr[r] >= base {
 			r--
 		}
-		nums[l], nums[r] = swap(nums[l], nums[r])
+		arr[l] = arr[r]
+		for l < r && arr[l] < base {
+			l++
+		}
+		arr[r] = arr[l]
 	}
-	nums[0] = nums[l]
-	nums[l] = base
-	leftPart := quickSort(nums[0:l])
-	rightPart := quickSort(nums[l+1:])
-	return append(append(leftPart, base), rightPart...)
-}
 
-func swap(a, b int) (int, int) {
-	return b, a
+	arr[l] = base
+	quickSort(arr[:l])
+	quickSort(arr[l+1:])
 }
