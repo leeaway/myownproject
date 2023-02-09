@@ -1,6 +1,7 @@
 package main
 
 import (
+	"example.com/m/v2/Huawei/problemlibrary"
 	"example.com/m/v2/demo"
 	"fmt"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -22,11 +23,7 @@ func main() {
 	//http.HandleFunc("/flex", examples.PageFlexLayoutExamples{}.Examples)
 	//http.HandleFunc("/non", examples.PageNoneLayoutExamples{}.Examples)
 
-	var a int
-	var b string
-	fmt.Println("please enter:")
-	fmt.Scanln(&a, &b)
-	fmt.Println(a, b)
+	fmt.Println(problemlibrary.CalShoppingList())
 }
 
 func init() {

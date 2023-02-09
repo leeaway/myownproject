@@ -171,3 +171,12 @@ func Test_dicesProbability(t *testing.T) {
 		})
 	})
 }
+
+func Test_longestValidParentheses(t *testing.T) {
+	Convey("longestValidParentheses", t, func() {
+		Convey("longestValidParentheses test1", func() {
+			So(longestValidParentheses(")()())"), ShouldEqual, 4)
+			So(longestValidParentheses("(()"), ShouldEqual, 2)
+		})
+	})
+}

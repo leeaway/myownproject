@@ -53,20 +53,30 @@ package singlestack
 //
 // Related Topics 栈 数组 哈希表 单调栈 👍 904 👎 0
 
+/*
+	单调栈通常用于解决下一个更大或更小值
+*/
+
 //leetcode submit region begin(Prohibit modification and deletion)
+//我们先处理nums2，记录nums2中下一个更大的数
 func nextGreaterElement(nums1 []int, nums2 []int) []int {
-	resMap := make(map[int]int)
+	//栈内存nums2的数
 	var stack []int
-	for i := len(nums2) - 1; i >= 0; i-- {
-		for len(stack) > 0 && stack[len(stack)-1] <= nums2[i] {
+	//补一个后位0方便处理
+	nums2 = append(nums2, 0)
+	//记录结果
+	resMap := make(map[int]int)
+	for _, num := range nums2 {
+		//栈非空且栈顶小于当前元素，直接pop，并记录结果集
+		for len(stack) > 0 && stack[len(stack)-1] < num {
+			resMap[stack[len(stack)-1]] = num
 			stack = stack[:len(stack)-1]
 		}
-		if len(stack) > 0 {
-			resMap[nums2[i]] = stack[len(stack)-1]
-		} else {
-			resMap[nums2[i]] = -1
-		}
-		stack = append(stack, nums2[i])
+		stack = append(stack, num)
+	}
+	for len(stack) > 0 {
+		resMap[stack[len(stack)-1]] = -1
+		stack = stack[:len(stack)-1]
 	}
 	var res []int
 	for _, num := range nums1 {
@@ -76,3 +86,24 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int {
 }
 
 //leetcode submit region end(Prohibit modification and deletion)
+
+//下一个更小的数
+func nextLessElement(nums []int) []int {
+	res := make([]int, len(nums))
+	//单调递减栈,栈内存索引
+	var stack []int
+
+	for i, num := range nums {
+		//非空且栈顶元素大于当前数
+		for len(stack) > 0 && nums[stack[len(stack)-1]] > num {
+			res[stack[len(stack)-1]] = num
+			stack = stack[:len(stack)-1]
+		}
+		stack = append(stack, i)
+	}
+	for len(stack) > 0 {
+		res[stack[len(stack)-1]] = -1
+		stack = stack[:len(stack)-1]
+	}
+	return res
+}

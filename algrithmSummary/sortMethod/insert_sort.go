@@ -7,7 +7,7 @@ package sortMethod
 func insertSort(nums []int) []int {
 	for i := 1; i < len(nums); i++ {
 		j := i
-		//这里类似插牌，这里可以优化成二分法，因为前面的数一定是有序的
+		//这里类似插牌
 		for j > 0 && nums[j] < nums[j-1] {
 			tmp := nums[j]
 			nums[j] = nums[j-1]

@@ -29,3 +29,12 @@ func Test_ConcurrentPrint123(t *testing.T) {
 		})
 	})
 }
+
+func Test_getRemainNum(t *testing.T) {
+	Convey("getRemainNum", t, func() {
+		Convey("getRemainNum test1", func() {
+			So(getRemainNum("123421", 2), ShouldEqual, 1221)
+			So(getRemainNum("10300", 1), ShouldEqual, 300)
+		})
+	})
+}

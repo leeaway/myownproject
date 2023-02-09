@@ -26,11 +26,3 @@ func Test_checkInclusion(t *testing.T) {
 		})
 	})
 }
-
-func Test_maxSlidingWindow(t *testing.T) {
-	Convey("maxSlidingWindow", t, func() {
-		Convey("maxSlidingWindow test1", func() {
-			So(maxSlidingWindow([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3), ShouldResemble, []int{3, 3, 5, 5, 6, 7})
-		})
-	})
-}
