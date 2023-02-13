@@ -26,3 +26,14 @@ func Test_checkInclusion(t *testing.T) {
 		})
 	})
 }
+
+func Test_balancedString(t *testing.T) {
+	Convey("balancedString", t, func() {
+		Convey("balancedString test1", func() {
+			So(balancedString("WQWRQQQW"), ShouldEqual, 3)
+			So(balancedString("QWER"), ShouldEqual, 0)
+			So(balancedString("QQQW"), ShouldEqual, 2)
+			So(balancedString("QQQQ"), ShouldEqual, 3)
+		})
+	})
+}

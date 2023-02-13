@@ -25,3 +25,26 @@ func Test_(t *testing.T) {
 		})
 	})
 }
+
+func Test_removeKdigits(t *testing.T) {
+	Convey("removeKdigits", t, func() {
+		Convey("removeKdigits test1", func() {
+			So(removeKdigits("12345262", 4), ShouldEqual, "1222")
+			So(removeKdigits("10200", 1), ShouldEqual, "200")
+			So(removeKdigits("10", 2), ShouldEqual, "0")
+		})
+	})
+}
+
+func Test_removeDuplicateLetters(t *testing.T) {
+	Convey("removeDuplicateLetters", t, func() {
+		Convey("removeDuplicateLetters test1", func() {
+			So(removeDuplicateLetters("abcdabc"), ShouldEqual, "abcd")
+			So(removeDuplicateLetters("cbacdcbc"), ShouldEqual, "acdb")
+			So(removeDuplicateLetters("cdadabcc"), ShouldEqual, "adbc")
+
+			So(removeDuplicateLetters("bbcaac"), ShouldEqual, "bac")
+
+		})
+	})
+}
